@@ -1,4 +1,4 @@
-package util;
+package com.udemy.springcore.common;
 
 public interface Coach {
 	
