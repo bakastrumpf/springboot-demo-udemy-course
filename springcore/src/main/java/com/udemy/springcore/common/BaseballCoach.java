@@ -4,6 +4,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BaseballCoach implements Coach {
+	
+	public BaseballCoach() {
+		System.out.println("In constructor: " + getClass().getSimpleName());
+	}
 
 	@Override
 	public String getDailyWorkout() {
@@ -11,8 +15,4 @@ public class BaseballCoach implements Coach {
 		return "Spend 30 minutes in batting practice. ";
 	}
 
-	public BaseballCoach() {
-		System.out.println("In constructor: " + getClass().getSimpleName());
-	}
-	
 }
