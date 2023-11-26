@@ -13,6 +13,7 @@ public class Controller {
 	// define a private field for the dependency
 	
 	private Coach myCoach;
+	private Coach anotherCoach;
 	
 // Field injection
 // no longer in use, only in legacy projects
@@ -46,9 +47,11 @@ public class Controller {
 	
 // Qualifier Constructor injection
 	@Autowired
-	public Controller(@Qualifier("cricketCoach") Coach theCoach) {
+	public Controller(@Qualifier("cricketCoach") Coach theCoach,
+			@Qualifier("cricketCoach") Coach theAnotherCoach) {
 		System.out.println("In constructor: " + getClass().getSimpleName());
 		myCoach = theCoach;
+		anotherCoach = theAnotherCoach;
 	}
 	
 // Qualifier Constructor injection
@@ -66,5 +69,10 @@ public class Controller {
 	@GetMapping("/dailyworkout")
 	public String getDailyWorkout() {
 		return myCoach.getDailyWorkout();
+	}
+	
+	@GetMapping("/check")
+	public String checkCoach() {
+		return "Comparing beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);
 	}
 }
