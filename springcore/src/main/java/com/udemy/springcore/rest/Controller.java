@@ -41,16 +41,22 @@ public class Controller {
 //
 	
 // Qualifier Constructor injection
+//	@Autowired
+//	public Controller(@Qualifier("cricketCoach") Coach theCoach) {
+//		myCoach = theCoach;
+//	}
+	
+// Qualifier Constructor injection
 	@Autowired
-	public Controller(@Qualifier("cricketCoach") Coach theCoach) {
+	public Controller(@Qualifier("tennisCoach") Coach theCoach) {
 		myCoach = theCoach;
 	}
 	
 // Qualifier Setter injection
-	@Autowired
-	public void setCoach(@Qualifier("cricketCoach") Coach theCoach) {
-		myCoach = theCoach;
-	}	
+//	@Autowired
+//	public void setCoach(@Qualifier("cricketCoach") Coach theCoach) {
+//		myCoach = theCoach;
+//	}	
 
 	@GetMapping("/dailyworkout")
 	public String getDailyWorkout() {
