@@ -1,6 +1,7 @@
 package com.udemy.springcore.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,18 +28,29 @@ public class Controller {
 //	}
 	
 // Setter injection
+//	@Autowired
+//	public void setCoach(Coach theCoach) {
+//		myCoach = theCoach;
+//	}
+	
+// Setter injection
+//		@Autowired
+//		public void doSomeStuff(Coach theCoach) {
+//			myCoach = theCoach;
+//		}
+//
+	
+// Qualifier Constructor injection
 	@Autowired
-	public void setCoach(Coach theCoach) {
+	public Controller(@Qualifier("cricketCoach") Coach theCoach) {
 		myCoach = theCoach;
 	}
 	
-// Setter injection
-//	@Autowired
-//	public void doSomeStuff(Coach theCoach) {
-//		myCoach = theCoach;
-//	}
-//	
-	
+// Qualifier Setter injection
+	@Autowired
+	public void setCoach(@Qualifier("cricketCoach") Coach theCoach) {
+		myCoach = theCoach;
+	}	
 
 	@GetMapping("/dailyworkout")
 	public String getDailyWorkout() {
