@@ -26,10 +26,10 @@ public class Controller {
 // yet @Qualifier has a higher priority when both @Qualifier and @Primary are present
 // @Primary leaves it up to the implementation classes
 // @Qualifier allows you to be specific on which bean you want
-	@Autowired
-	public Controller(Coach theCoach) {
-		myCoach = theCoach;
-	}
+//	@Autowired
+//	public Controller(Coach theCoach) {
+//		myCoach = theCoach;
+//	}
 	
 // Setter injection
 //	@Autowired
@@ -45,10 +45,11 @@ public class Controller {
 //
 	
 // Qualifier Constructor injection
-//	@Autowired
-//	public Controller(@Qualifier("cricketCoach") Coach theCoach) {
-//		myCoach = theCoach;
-//	}
+	@Autowired
+	public Controller(@Qualifier("cricketCoach") Coach theCoach) {
+		System.out.println("In constructor: " + getClass().getSimpleName());
+		myCoach = theCoach;
+	}
 	
 // Qualifier Constructor injection
 //	@Autowired
