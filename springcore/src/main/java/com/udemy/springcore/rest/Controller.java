@@ -54,8 +54,14 @@ public class Controller {
 //		anotherCoach = theAnotherCoach;
 //	}
 	
+//	@Autowired
+//	public Controller(@Qualifier("cricketCoach") Coach theCoach) {
+//		System.out.println("In constructor: " + getClass().getSimpleName());
+//		myCoach = theCoach;
+//	}
+	
 	@Autowired
-	public Controller(@Qualifier("cricketCoach") Coach theCoach) {
+	public Controller(@Qualifier("aquatic") Coach theCoach) {
 		System.out.println("In constructor: " + getClass().getSimpleName());
 		myCoach = theCoach;
 	}
