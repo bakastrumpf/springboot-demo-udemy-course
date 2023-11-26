@@ -22,10 +22,14 @@ public class Controller {
 	// define a constructor for the dependency
 	
 //	Constructor injection
-//	@Autowired
-//	public Controller(Coach theCoach) {
-//		myCoach = theCoach;
-//	}
+// to use with @Primary
+// yet @Qualifier has a higher priority when both @Qualifier and @Primary are present
+// @Primary leaves it up to the implementation classes
+// @Qualifier allows you to be specific on which bean you want
+	@Autowired
+	public Controller(Coach theCoach) {
+		myCoach = theCoach;
+	}
 	
 // Setter injection
 //	@Autowired
@@ -47,10 +51,10 @@ public class Controller {
 //	}
 	
 // Qualifier Constructor injection
-	@Autowired
-	public Controller(@Qualifier("tennisCoach") Coach theCoach) {
-		myCoach = theCoach;
-	}
+//	@Autowired
+//	public Controller(@Qualifier("tennisCoach") Coach theCoach) {
+//		myCoach = theCoach;
+//	}
 	
 // Qualifier Setter injection
 //	@Autowired
