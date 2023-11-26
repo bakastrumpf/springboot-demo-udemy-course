@@ -13,12 +13,31 @@ public class Controller {
 	
 	private Coach myCoach;
 	
+// Field injection
+// no longer in use, only in legacy projects
+//	@Autowired
+//	private Coach myCoach;
+	
 	// define a constructor for the dependency
 	
+//	Constructor injection
+//	@Autowired
+//	public Controller(Coach theCoach) {
+//		myCoach = theCoach;
+//	}
+	
+// Setter injection
 	@Autowired
-	public Controller(Coach theCoach) {
+	public void setCoach(Coach theCoach) {
 		myCoach = theCoach;
 	}
+	
+// Setter injection
+//	@Autowired
+//	public void doSomeStuff(Coach theCoach) {
+//		myCoach = theCoach;
+//	}
+//	
 	
 
 	@GetMapping("/dailyworkout")
