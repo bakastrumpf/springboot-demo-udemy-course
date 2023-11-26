@@ -10,5 +10,9 @@ public class TennisCoach implements Coach {
 		// TODO Auto-generated method stub
 		return "Practice backhand volley. ";
 	}
+	
+	public TennisCoach() {
+		System.out.println("In constructor: " + getClass().getSimpleName());
+	}
 
 }

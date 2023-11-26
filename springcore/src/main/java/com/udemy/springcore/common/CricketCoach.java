@@ -10,5 +10,9 @@ public class CricketCoach implements Coach {
 		// TODO Auto-generated method stub
 		return "Practice fast bowling for 15 mins.";
 	}
+	
+	public CricketCoach() {
+		System.out.println("In constructor: " + getClass().getSimpleName());
+	}
 
 }

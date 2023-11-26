@@ -12,5 +12,9 @@ public class TrackCoach implements Coach {
 		// TODO Auto-generated method stub
 		return "Run a hard 5k! ";
 	}
+	
+	public TrackCoach() {
+		System.out.println("In constructor: " + getClass().getSimpleName());
+	}
 
 }

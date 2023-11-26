@@ -11,4 +11,8 @@ public class BaseballCoach implements Coach {
 		return "Spend 30 minutes in batting practice. ";
 	}
 
+	public BaseballCoach() {
+		System.out.println("In constructor: " + getClass().getSimpleName());
+	}
+	
 }
