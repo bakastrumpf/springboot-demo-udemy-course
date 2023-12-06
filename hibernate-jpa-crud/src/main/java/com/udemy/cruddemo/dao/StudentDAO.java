@@ -5,5 +5,7 @@ import com.udemy.cruddemo.Entity.Student;
 public interface StudentDAO {
 	
 	void save(Student theStudent);
+	
+	Student findById(Integer id);
 
 }
