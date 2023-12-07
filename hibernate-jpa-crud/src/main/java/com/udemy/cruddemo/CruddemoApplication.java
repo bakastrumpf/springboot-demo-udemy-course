@@ -29,10 +29,28 @@ public class CruddemoApplication {
 				
 				// readStudent(studentDAO);
 				
-				queryForStudents(studentDAO);
+				// queryForStudents(studentDAO);
+				
+				queryForStudentsByLastName(studentDAO);
 			};
 		}
 		
+		private void queryForStudentsByLastName(StudentDAO studentDAO) {
+			// TODO Auto-generated method stub
+			
+			// get a list of students
+			
+			List<Student> theStudents = studentDAO.findByLastName("Estudante");
+			
+			
+			// display list of students
+			
+			for (Student tempStudent : theStudents) {
+				System.out.println(tempStudent);
+			} 
+			
+		}
+
 		private void queryForStudents(StudentDAO studentDAO) {
 			
 			// get a list of students
