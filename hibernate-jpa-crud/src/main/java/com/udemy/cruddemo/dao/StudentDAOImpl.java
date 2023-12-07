@@ -1,6 +1,9 @@
 package com.udemy.cruddemo.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +39,20 @@ public class StudentDAOImpl implements StudentDAO {
 	public Student findById(Integer id) {
 		// TODO Auto-generated method stub
 		return entityManager.find(Student.class, id);
+	}
+
+	@Override
+	public List<Student> findAll() {
+		// TODO Auto-generated method stub
+		
+		// create query 
+		
+		TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student order by lastName", Student.class);
+		
+		
+		// return query results
+		
+		return theQuery.getResultList();
 	}
 	
 	
