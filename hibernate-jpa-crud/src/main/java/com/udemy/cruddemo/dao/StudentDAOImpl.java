@@ -78,6 +78,15 @@ public class StudentDAOImpl implements StudentDAO {
 		// delete the student
 		entityManager.remove(theStudent);
 	}
+
+	@Override
+	@Transactional // adding this annotation as we are updating DB
+	public int deleteAllStudents() {
+		
+		int numRowsDeleted = entityManager.createQuery("DELETE FROM Student").executeUpdate();
+		// System.out.println("Successfully deleted " + numRowsDeleted);
+		return numRowsDeleted;
+	}
 	
 	
 
