@@ -15,74 +15,68 @@ import com.udemy.cruddemo.Entity.Student;
 public class StudentDAOImpl implements StudentDAO {
 
 	// define field for entity manager
-	
 	private EntityManager entityManager;
 	
 	// inject entity manager using constructor injection
-	
 	@Autowired
 	public StudentDAOImpl(EntityManager entityManager) {
 		super();
 		this.entityManager = entityManager;
 	}
 	
-	// implement save method
-	
+	// implement save method	
 	@Override
 	@Transactional
 	public void save(Student theStudent) {
-		// TODO Auto-generated method stub
 		entityManager.persist(theStudent);
 	}
 
 	@Override
 	public Student findById(Integer id) {
-		// TODO Auto-generated method stub
 		return entityManager.find(Student.class, id);
 	}
 
 	@Override
 	public List<Student> findAll() {
-		// TODO Auto-generated method stub
 		
-		// create query 
-		
+		// create query 		
 //		TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student order by lastName asc", Student.class);
 		TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student", Student.class);
-		
-		
-		// return query results
-		
+				
+		// return query results		
 		return theQuery.getResultList();
 	}
 
 	@Override
 	public List<Student> findByLastName(String theLastName) {
-		// TODO Auto-generated method stub
 		
-		// create query
-		
+		// create query		
 		TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student WHERE lastName:=tehData", Student.class);
-	
-		
-		// set query parameteres
-		
+			
+		// set query parameteres		
 		theQuery.setParameter("theData", theLastName);
 		
-		// return query results
-		
+		// return query results		
 		return theQuery.getResultList();
 	}
 
 	@Override
 	@Transactional // adding this annotation as we are updating DB
 	public void update(Student theStudent) {
-		// TODO Auto-generated method stub
 		
-		// update student
-		
+		// update student		
 		entityManager.merge(theStudent);
+	}
+
+	@Override
+	@Transactional // adding this because  we are performing a delete 
+	public void delete(Integer id) {
 		
+		// retrieve the student
+		Student theStudent = entityManager.find(Student.class, id);
+		
+		// delete the student
+		entityManager.remove(theStudent);
 	}
 	
 	

@@ -22,73 +22,62 @@ public class CruddemoApplication {
 			
 			return runner -> {
 				// System.out.println("Hello, world!");
-				
 				// createStudent(studentDAO);
-				
 				// createMultipleStudents(studentDAO);
-				
 				// readStudent(studentDAO);
-				
 				// queryForStudents(studentDAO);
-				
 				// queryForStudentsByLastName(studentDAO);
-				
-				updateStudent(studentDAO);
+				// updateStudent(studentDAO);
+				deleteStudent(studentDAO);
 			};
 		}
 		
+		private void deleteStudent(StudentDAO studentDAO) {
+
+			// delete the student
+			int studentId = 3;
+			System.out.println("Deleting student id: " + studentId);
+			studentDAO.delete(studentId);
+			
+		}
+
 		private void updateStudent(StudentDAO studentDAO) {
-			// TODO Auto-generated method stub
 			
 			// retrieve student based on the id: primary key
-			
 			int studentId = 1;
 			System.out.println("Getting student with id: " + studentId);
 			Student myStudent = studentDAO.findById(studentId);
 			
-			
 			// change first name to "sth"
-			
 			System.out.println("Updating student... ");
 			// myStudent.setFirstName("Scooby");
 			myStudent.setFirstName("Mary");
 			
-			
 			// update the student
+			studentDAO.update(myStudent);			
 			
-			studentDAO.update(myStudent);
-			
-			
-			// display the updated student
-			
+			// display the updated student			
 			System.out.println("Updated student: " + myStudent);
 			
 		}
 
 		private void queryForStudentsByLastName(StudentDAO studentDAO) {
-			// TODO Auto-generated method stub
 			
 			// get a list of students
-			
 			List<Student> theStudents = studentDAO.findByLastName("Estudante");
 			
-			
-			// display list of students
-			
+			// display list of students			
 			for (Student tempStudent : theStudents) {
 				System.out.println(tempStudent);
-			} 
-			
+			} 	
 		}
 
 		private void queryForStudents(StudentDAO studentDAO) {
 			
 			// get a list of students
 			List<Student> theStudents = studentDAO.findAll();
-			
-			
-			// display list of students
-			
+						
+			// display list of students			
 			for (Student tempStudent : theStudents) {
 				System.out.println(tempStudent);
 			}
@@ -119,15 +108,13 @@ public class CruddemoApplication {
 		
 		private void createMultipleStudents(StudentDAO studentDAO) {
 			
-			// create multiple students
-			
+			// create multiple students			
 			System.out.println("Creating 3 student objects... ");
 			Student tempStudent1 = new Student("Melissa", "Thestudent", "melissa@thestudent.net");
 			Student tempStudent2 = new Student("James", "Estudante", "james@estudante.net");
 			Student tempStudent3 = new Student("Janet", "Studente", "janet@studente.net");
 			
-			// save the student objects
-			
+			// save the student objects			
 			System.out.println("Saving the students... ");
 			studentDAO.save(tempStudent1);
 			studentDAO.save(tempStudent2);
@@ -138,18 +125,15 @@ public class CruddemoApplication {
 		
 		private void createStudent(StudentDAO studentDAO) {
 			
-			// create the student object
-			
+			// create the student object			
 			System.out.println("Creating new student object... ");
 			Student tempStudent0 = new Student("Paul", "Thestudent", "paul@thestudent.net");
 			
-			// save the student object
-			
+			// save the student object			
 			System.out.println("Saving the student... ");
 			studentDAO.save(tempStudent0);
 			
-			// display id of the saved student
-			
+			// display id of the saved student			
 			System.out.println("Saved student. Generated id: " + tempStudent0.getId());
 		}
 
