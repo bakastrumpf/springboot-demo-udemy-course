@@ -23,10 +23,16 @@ public class StudentRestController {
 	public void loadData() {
 		
 		theStudents = new ArrayList<>();
+		
+		// populate theStudents
 		theStudents.add(new Student("Elena", "Galli"));
 		theStudents.add(new Student("Mario", "Rossi"));
 		theStudents.add(new Student("Guido", "Serafino"));
 		theStudents.add(new Student("Marco", "Pedrini"));
+		theStudents.add(new Student("Mirko", "Raimo"));
+		theStudents.add(new Student("Alessio", "Mugnaioli"));
+		theStudents.add(new Student("Luca", "Giovanelli"));
+		theStudents.add(new Student("Daniele", "Dallosso"));
 	}
 	
 	// define endpoint for "/students" to return a list of all students
@@ -40,12 +46,8 @@ public class StudentRestController {
 	@GetMapping("/students/{studentId}")
 	public Student getStudent(@PathVariable int studentId) {
 		
-		// populate theStudents
-		List<Student> theStudents = new ArrayList<>();
-		theStudents.add(new Student("Mirko", "Raimo"));
-		theStudents.add(new Student("Alessio", "Mugnaioli"));
-		theStudents.add(new Student("Luca", "Giovanelli"));
-		theStudents.add(new Student("Daniele", "Dallosso"));
+		// just index into the list | to keep it simple for now
+		
 		return theStudents.get(studentId);
 	}
 
