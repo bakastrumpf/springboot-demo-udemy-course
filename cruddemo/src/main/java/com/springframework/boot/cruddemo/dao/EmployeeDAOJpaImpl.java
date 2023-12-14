@@ -13,7 +13,6 @@ import com.springframework.boot.cruddemo.entity.Employee;
 @Repository
 public class EmployeeDAOJpaImpl implements EmployeeDAO {
 
-	
 	// define field of entity manager
 	private EntityManager entityManager;
 	
@@ -22,6 +21,7 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
 	public EmployeeDAOJpaImpl (EntityManager theEntityManager) {
 		entityManager = theEntityManager;
 	}
+	
 	
 	@Override
 	public List<Employee> findAll() {
@@ -36,6 +36,7 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
 		return employees;
 	}
 
+	
 	@Override
 	// here we do not use @Transactional because it will be handled at the service layer
 	public Employee findById(int theId) {
@@ -46,6 +47,7 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
 		// return employee		
 		return theEmployee;
 	}
+	
 
 	@Override
 	public Employee save(Employee theEmployee) {
@@ -58,6 +60,7 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
 		return dbEmployee;
 		// in case of insert, dbEmployee has the updated ID from the DB
 	}
+	
 
 	@Override
 	// here we do not use @Transactional because it will be handled at the service layer
@@ -68,7 +71,7 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
 		
 		// remove the employee
 		entityManager.remove(theEmployee);
-		
 	}
-
+	
+	
 }
