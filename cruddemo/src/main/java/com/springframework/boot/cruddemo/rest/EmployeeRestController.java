@@ -3,6 +3,7 @@ package com.springframework.boot.cruddemo.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,7 +54,7 @@ public class EmployeeRestController {
 	}
 	
 	
-	// add mapping fro POST /employees - add new employee
+	// add mapping for POST /employees - add new employee
 	@PostMapping("/employees")
 	public Employee addEmployee(@RequestBody Employee theEmployee) {
 		
@@ -72,5 +73,18 @@ public class EmployeeRestController {
 		Employee dbEmployee = employeeService.save(theEmployee);
 		return dbEmployee;
 	}
-
+	
+	
+	// add mapping for DELETE /employeees/{employeeId} - delete employee
+	@DeleteMapping("/employeees/{employeeId}")
+	public String deleteEmployee(@PathVariable int employeeId) {
+		Employee tempEmployee = employeeService.findById(employeeId);
+		//throw exception if null
+		if(tempEmployee == null) {
+			throw new RuntimeException("Employee id not found: " + employeeId);
+		}
+		employeeService.deleteById(employeeId);
+		return "Deleted employee id: " + employeeId;
+	}
+	
 }
