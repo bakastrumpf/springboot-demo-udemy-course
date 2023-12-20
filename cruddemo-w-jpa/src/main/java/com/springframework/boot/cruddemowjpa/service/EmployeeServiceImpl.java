@@ -1,6 +1,8 @@
 package com.springframework.boot.cruddemowjpa.service;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import com.springframework.boot.cruddemowjpa.dao.EmployeeRepository;
 import com.springframework.boot.cruddemowjpa.entity.Employee;
@@ -8,7 +10,6 @@ import com.springframework.boot.cruddemowjpa.entity.Employee;
 public class EmployeeServiceImpl implements EmployeeService {
 	
 	private EmployeeRepository employeeRepository;
-	
 	
 	@Autowired
 	public EmployeeServiceImpl(EmployeeRepository theEmployeeRepository) {
@@ -24,7 +25,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	@Override
 	public Employee findById(int theId) {
-		return employeeRepository.findById(theId);
+		// use Optional from Java8 to check if id is null
+		Optional<Employee> result = employeeRepository.findById(theId);
+		Employee theEmployee = null;
+		if (result.isPresent()) {
+			theEmployee = result.get();
+		}
+		else {
+			// we didn't find the employee
+			throw new RuntimeException("Did not find employee id: " + theId);
+		}
+		return theEmployee;
 	}
 
 	
