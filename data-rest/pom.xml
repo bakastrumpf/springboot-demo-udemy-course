@@ -42,6 +42,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- add dependency for Spring Data REST -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
