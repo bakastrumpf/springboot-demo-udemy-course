@@ -26,13 +26,13 @@ public class DemoSecurityConfig {
 		
 		UserDetails wayne = User.builder()
 				.username("wayne")
-				.password("{noop}test123")
+				.password("{noop}test125")
 				.roles("EMPLOYEE","MANAGER")
 				.build();
 		
 		UserDetails susan = User.builder()
 				.username("susan")
-				.password("{noop}test123")
+				.password("{noop}test126")
 				.roles("EMPLOYEE","MANAGER", "ADMIN")
 				.build();
 		
