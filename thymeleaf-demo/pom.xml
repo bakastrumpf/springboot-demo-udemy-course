@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springframework.boot</groupId>
-	<artifactId>thymeleaf-demo</artifactId>
+	<artifactId>09-thymeleaf-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>thymeleaf-demo</name>
-	<description>Thymeleaf &amp; MVC demo project project for Udemy Spring Boot course</description>
+	<name>09-thymeleaf-demo</name>
+	<description>Thymeleaf Demo project | Spring Boot 3, Spring 6 &amp; Hibernate Udemy course by luv2code</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
