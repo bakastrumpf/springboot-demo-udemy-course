@@ -1,10 +1,10 @@
-package com.springboot;
+package com.springframework.boot.thymeleafdemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class ThymeleafdemoApplicationTests {
 
 	@Test
 	void contextLoads() {
