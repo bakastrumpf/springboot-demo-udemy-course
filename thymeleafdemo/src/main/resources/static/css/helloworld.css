@@ -1,4 +1,5 @@
 .ubuntu {
-    font-family: Ubuntu;
+    font-family: Ubuntu, sans-serif;
     color: darkslateblue;
+    font-size: large;
 }
