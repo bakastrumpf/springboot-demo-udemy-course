@@ -1,4 +1,4 @@
-package main.java.com.springframework.boot.thymeleafdemo.controller;
+package com.springframework.boot.thymeleafdemo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
