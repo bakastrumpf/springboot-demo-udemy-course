@@ -10,10 +10,14 @@ public class HelloWorldController {
 
     @RequestMapping("/showForm")
     public String showForm(){
-        return "hellworld-form";
+        return "helloworld-form";
     }
 
     // need controller method to process the HTML form
+    @RequestMapping("/processForm")
+    public String processForm(){
+        return "helloworld";
 
+    }
 
 }

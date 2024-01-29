@@ -9,26 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>helloWorld</title>
-
     <!-- reference CSS file -->
-    <!--
     <link rel="stylesheet" th:href="@{/css/helloworld.css}" />
-    -->
-
 </head>
 
 <body>
-<!--
-<p th:text="'Time on the server is ' + ${theDate}" class="ubuntu" />
--->
 
+<p th:text="'Time on the server is ' + ${theDate}" class="ubuntu" />
 <!--
 Time on the server is Mon Jan 29 22:57:31 CET 2024
 -->
-
-Hello, world of Spring!
-<br><br>
-Student name: <span th:text="${param.studentName}"></span>
 
 </body>
 
