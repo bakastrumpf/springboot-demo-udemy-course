@@ -9,19 +9,23 @@
     </style>
 </head>
 <body>
+<fieldset style="width: 250px;">
+    <legend>Registration form</legend>
 <i>Fill out the form. Asterisk (*) marks required fields.</i>
-<br><br>
-<form th:action="@{/processForm}" th:object="customer" method="POST">
+<br><hr><br>
+<form th:action="@{/processForm}" th:object="${customer}" method="POST">
 
     First name: <input type="text" th:field="*{firstName}" />
+    <br><br>
     Last name: <input type="text" th:field="*{lastName}" />
 
     <!-- add error msg (if present) -->
     <span th:if="${#fields.hasErrors('lastName')}"
           th:errors="error"></span>
-
+    <br><br>
     <input type="submit" value="SUBMIT">
 </form>
+</fieldset>
 
 </body>
 </html>

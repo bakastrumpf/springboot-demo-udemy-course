@@ -14,7 +14,7 @@ public class CustomerController {
     @GetMapping("/")
     public String showForm(Model theModel) {
 
-        theModel.addAttribute("customer", new Customer);
+        theModel.addAttribute("customer", new Customer());
 
         return "customer-form";
     }

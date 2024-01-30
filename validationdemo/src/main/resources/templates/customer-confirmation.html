@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Confirmation Form</title>
+
+    <style>
+        .error {color:indianred}
+    </style>
+</head>
+<body>
+
+The customer confirmed: <span th:text="${customer.firstName + ' ' + customer.lastName}" ></span>
+
+</body>
+</html>
