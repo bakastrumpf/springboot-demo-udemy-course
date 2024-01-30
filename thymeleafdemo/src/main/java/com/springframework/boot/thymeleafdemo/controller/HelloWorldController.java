@@ -11,6 +11,9 @@ public class HelloWorldController {
 
     // need a controller method to show initial HTML form
 
+    // @GetMapping("/showForm")
+    // POST mapping will break the code - on purpose:
+    // @PostMapping("/showForm")
     @RequestMapping("/showForm")
     public String showForm(){
         return "helloworld-form";
