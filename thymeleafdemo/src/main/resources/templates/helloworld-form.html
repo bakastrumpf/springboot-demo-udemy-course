@@ -5,10 +5,27 @@
     <title>Hello World input form</title>
 </head>
 <body>
+<!--
 <form th:action="@{/processForm}" method="GET" >
     <input type="text" name="studentName" placeholder="What's your name?" />
     <input type="submit"/>
 </form>
+-->
+
+<form th:action="@{/processFormVT}" method="GET" >
+    <input type="text" name="studentName" placeholder="What's your name?" />
+    <input type="submit"/>
+</form>
+<!--
+renders the result:
+
+Hello, world of Spring!
+
+Student name: Adrien
+
+The message: Yo! ADRIEN
+
+-->
 
 </body>
 </html>
