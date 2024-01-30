@@ -5,6 +5,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private String country;
+    private String course;
 
     public Student(){
 
@@ -32,5 +33,13 @@ public class Student {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
     }
 }
