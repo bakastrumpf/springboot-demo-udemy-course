@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class StudentController {
 
     // create method to show form
-    @GetMapping("/showForm")
+    @GetMapping("/showStudentForm")
     public String showForm(Model theModel){
 
         // create a new student object
