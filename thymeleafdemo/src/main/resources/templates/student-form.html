@@ -38,18 +38,17 @@
     -->
     <br><br>
     Preferred OS:
+    <input type="checkbox" th:field="*{system}"
+                            th:each="tempSystem : ${systems}"
+                            th:value="${tempSystem}"
+                            th:text="${tempSystem}" />
     <!-- hardcoded values:
-    <input type="checkbox" th:field="*{pos}" th:value="Linux">Linux</input>
-    <input type="checkbox" th:field="*{pos}" th:value="macOS">macOS</input>
-    <input type="checkbox" th:field="*{pos}" th:value="'Microsoft Windows'">Microsoft Windows</input>
-    <input type="checkbox" th:field="*{pos}" th:value="other">other</input>
+    <input type="checkbox" th:field="*{system}" th:value="Linux">Linux</input>
+    <input type="checkbox" th:field="*{system}" th:value="macOS">macOS</input>
+    <input type="checkbox" th:field="*{system}" th:value="'Microsoft Windows'">Microsoft Windows</input>
+    <input type="checkbox" th:field="*{system}" th:value="other">other</input>
     -->
 
-    <input type="checkbox" th:field="*{system}"
-                            th:each="tempSystem :${systems}"
-                            th:value="${tempSystem}"
-                            th:text="${tempSystem}"
-    />
     <br><hr><br>
     <input type="submit" value="Submit" />
 </form>
