@@ -36,6 +36,12 @@
     <input type="radio" th:field="*{course}" th:value="PHP">PHP</input>
     <input type="radio" th:field="*{course}" th:value="Ruby">Ruby</input>
     -->
+    <br><br>
+    Preferred OS:
+    <input type="checkbox" th:field="*{pos}" th:value="Linux">Linux</input>
+    <input type="checkbox" th:field="*{pos}" th:value="macOS">macOS</input>
+    <input type="checkbox" th:field="*{pos}" th:value="'Microsoft Windows'">Microsoft Windows</input>
+    <input type="checkbox" th:field="*{pos}" th:value="other">other</input>
     <br><hr><br>
     <input type="submit" value="Submit" />
 </form>

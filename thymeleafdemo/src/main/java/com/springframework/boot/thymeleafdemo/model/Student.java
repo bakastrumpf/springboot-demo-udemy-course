@@ -6,6 +6,7 @@ public class Student {
     private String lastName;
     private String country;
     private String course;
+    private String pos;
 
     public Student(){
 
@@ -41,5 +42,13 @@ public class Student {
 
     public void setCourse(String course) {
         this.course = course;
+    }
+
+    public String getPos() {
+        return pos;
+    }
+
+    public void setPos(String pos) {
+        this.pos = pos;
     }
 }
