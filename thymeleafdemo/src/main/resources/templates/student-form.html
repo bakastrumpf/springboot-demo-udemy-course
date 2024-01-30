@@ -13,11 +13,15 @@
     <br><br>
     Country:
     <select th:field="*{country}">
+        <!-- tempCountry is the temp loop variable-->
+        <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}" />
+        <!-- hardcoded options:
         <option th:value="France">France</option>
         <option th:value="Norway">Norway</option>
         <option th:value="Poland">Poland</option>
         <option th:value="Russia">Russia</option>
         <option th:value="Switzerland">Switzerland</option>
+        -->
     </select>
     <input type="submit" value="Submit" />
 </form>
