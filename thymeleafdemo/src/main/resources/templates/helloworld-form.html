@@ -12,10 +12,12 @@
 </form>
 -->
 
-<form th:action="@{/processFormVT}" method="GET" >
+<!--
+<form th:action="@{/processFormV2}" method="GET" >
     <input type="text" name="studentName" placeholder="What's your name?" />
     <input type="submit"/>
 </form>
+-->
 <!--
 renders the result:
 
@@ -24,8 +26,12 @@ Hello, world of Spring!
 Student name: Adrien
 
 The message: Yo! ADRIEN
-
 -->
+
+<form th:action="@{/processFormV3}" method="GET" >
+    <input type="text" name="studentName" placeholder="What's your name?" />
+    <input type="submit"/>
+</form>
 
 </body>
 </html>
