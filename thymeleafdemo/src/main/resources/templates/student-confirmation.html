@@ -3,11 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Student confirmation form</title>
+
+  <!-- reference CSS file -->
+  <link rel="stylesheet" th:href="@{/css/helloworld.css}" />
+
 </head>
 <body>
-<h3>Student Confirmation Form</h3>
+<div class="ubuntu">
+  <h3>Student Confirmation Form</h3>
 
-The student is confirmed: <span th:text="${student.firstName} + ' ' + ${student.lastName}"></span>
+  The student is confirmed: <span th:text="${student.firstName} + ' ' + ${student.lastName}"></span>
+  <br>
+  The student's chosen country: <span th:text="${student.country}"></span>
+</div>
+
 
 </body>
 </html>
