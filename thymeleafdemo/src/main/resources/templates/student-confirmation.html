@@ -18,7 +18,13 @@
   <br>
   Selected course: <span th:text="${student.course}"></span>
   <br>
+  Preferred OS:
+  <!--
   Preferred OS: <span th:text="${student.pos}"></span>
+  -->
+  <ul>
+    <li th:each="tempOs : ${student.pos}" th:text="${tempOs}" />
+  </ul>
 </div>
 
 
