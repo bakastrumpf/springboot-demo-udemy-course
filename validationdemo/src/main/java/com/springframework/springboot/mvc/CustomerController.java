@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class CustomerController {
 
     // to not allow empty string as last name
+    // add init binder to convert trim input strings
+    // resolve issue for our validation
     @InitBinder
     public void initBinder(WebDataBinder dataBinder){
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
@@ -34,6 +36,7 @@ public class CustomerController {
             @Valid @ModelAttribute("customer") Customer theCustomer,
             BindingResult theBindingResult) {
 
+        System.out.println("Last name: |" + theCustomer.getLastName() + "|");
         if(theBindingResult.hasErrors()){
             return "customer-form";
         }
