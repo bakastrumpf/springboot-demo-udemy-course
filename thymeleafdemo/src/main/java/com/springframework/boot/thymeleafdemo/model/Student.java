@@ -8,7 +8,7 @@ public class Student {
     private String lastName;
     private String country;
     private String course;
-    private List<String> pos;
+    private String system;
 
     public Student(){
 
@@ -46,11 +46,11 @@ public class Student {
         this.course = course;
     }
 
-    public List<String> getPos() {
-        return pos;
+    public String getSystem() {
+        return system;
     }
 
-    public void setPos(List<String> pos) {
-        this.pos = pos;
+    public void setSystem(String system) {
+        this.system = system;
     }
 }

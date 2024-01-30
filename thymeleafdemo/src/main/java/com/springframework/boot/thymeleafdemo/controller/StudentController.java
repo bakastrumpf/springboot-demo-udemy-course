@@ -19,6 +19,9 @@ public class StudentController {
     @Value("${courses}")
     private List<String> courses;
 
+    @Value("${systems}")
+    private List<String> systems;
+
     // create method to show form
     @GetMapping("/showStudentForm")
     public String showForm(Model theModel){
@@ -35,6 +38,9 @@ public class StudentController {
         // add the list of courses to the model
         theModel.addAttribute("courses", courses);
 
+        // add the list of systems to the model
+        theModel.addAttribute("systems", systems);
+
         return "student-form";
     }
 
@@ -42,7 +48,7 @@ public class StudentController {
     public String processForm(@ModelAttribute("student") Student theStudent){
 
         // log the input data
-        System.out.println("theStudent: " + theStudent.getFirstName() + " " + theStudent.getLastName() + " " + theStudent.getCountry() + " " + theStudent.getCourse() + " " + theStudent.getPos());
+        System.out.println("Student data: " + theStudent.getFirstName() + " " + theStudent.getLastName() + " " + theStudent.getCountry() + " " + theStudent.getCourse() + " " + theStudent.getSystem());
 
         return "student-confirmation";
     }
