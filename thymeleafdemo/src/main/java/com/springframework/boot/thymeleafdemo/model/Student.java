@@ -1,12 +1,14 @@
 package com.springframework.boot.thymeleafdemo.model;
 
+import java.util.List;
+
 public class Student {
 
     private String firstName;
     private String lastName;
     private String country;
     private String course;
-    private String pos;
+    private List<String> pos;
 
     public Student(){
 
@@ -44,11 +46,11 @@ public class Student {
         this.course = course;
     }
 
-    public String getPos() {
+    public List<String> getPos() {
         return pos;
     }
 
-    public void setPos(String pos) {
+    public void setPos(List<String> pos) {
         this.pos = pos;
     }
 }
