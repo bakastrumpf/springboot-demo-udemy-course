@@ -25,11 +25,18 @@
     </select>
     <br><br>
     Choose a course:
+    <input type="radio" th:field="*{course}"
+                        th:each="tempCourse :${courses}"
+                        th:value="${tempCourse}"
+                        th:text="${tempCourse}"
+    />
+    <!-- hardcoded values:
     <input type="radio" th:field="*{course}" th:value="Go">Go</input>
     <input type="radio" th:field="*{course}" th:value="Java">Java</input>
     <input type="radio" th:field="*{course}" th:value="PHP">PHP</input>
     <input type="radio" th:field="*{course}" th:value="Ruby">Ruby</input>
-    <br><hr>    <br>
+    -->
+    <br><hr><br>
     <input type="submit" value="Submit" />
 </form>
 
