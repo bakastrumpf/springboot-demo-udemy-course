@@ -20,8 +20,8 @@ public class EmployeeController {
         employeeService = theEmployeeService;
     }
 
-    @GetMapping("/list")
     // add mapping for "/list"
+    @GetMapping("/list")
     public String listEmployees(Model theModel){
 
         // get employees from db
