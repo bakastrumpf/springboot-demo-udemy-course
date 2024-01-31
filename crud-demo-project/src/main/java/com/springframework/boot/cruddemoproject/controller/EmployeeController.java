@@ -2,9 +2,7 @@ package com.springframework.boot.cruddemoproject.controller;
 
 import com.springframework.boot.cruddemoproject.entity.Employee;
 import com.springframework.boot.cruddemoproject.service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
