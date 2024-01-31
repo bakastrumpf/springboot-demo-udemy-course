@@ -39,7 +39,7 @@ public class CustomerController {
         // debugging trick:
         System.out.println("Last name: |" + theCustomer.getLastName() + "|");
         System.out.println("Binding results: |" + theBindingResult.toString() + "|");
-        System.out.println("\n\n\n\n\n");
+        System.out.println("\n\n");
 
         /*
         renders the following:
