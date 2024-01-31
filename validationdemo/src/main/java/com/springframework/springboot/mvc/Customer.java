@@ -15,6 +15,7 @@ public class Customer {
     private int freePasses;
 
     @Pattern(regexp="^[0-9]{5}", message="must contain 5 digits")
+    // @Pattern(regexp="^[a-zA-Z0-9]{5}", message="must contain 5 digits/letetrs")
     private String postalCode;
 
     public Customer() {
