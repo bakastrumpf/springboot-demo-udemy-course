@@ -10,7 +10,7 @@
 </head>
 <body>
 
-The customer confirmed: <span th:text="${customer.firstName + ' ' + customer.lastName}" />
+The customer confirmed: <span th:text="${customer.firstName + ' ' + customer.lastName + ', ' + customer.postalCode}" />
 <br><br>
 Number of free passes: <span th:text="${customer.freePasses}" />
 
