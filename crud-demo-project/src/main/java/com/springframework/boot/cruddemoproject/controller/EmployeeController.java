@@ -18,6 +18,28 @@ public class EmployeeController {
         employeeService = theEmployeeService;
     }
 
+    @GetMapping("/showAddForm")
+    public String showAddForm(Model theModel){
+
+        // create model attribute to bind form data
+        Employee theEmployee = new Employee();
+
+        theModel.addAttribute("employee", theEmployee);
+
+        return "employees/employee-form";
+    }
+
+    @PostMapping("/save")
+    public String saveEmployee(@ModelAttribute("employee") Employee theEmployee){
+
+        // save the employee
+        employeeService.save(theEmployee);
+
+        // use a redirect to prevent duplicate submissions
+        // implementation of "Post/Redirect/Get" pattern
+        return "redirect:/employees/list";
+    }
+
     // add mapping for "/list"
     @GetMapping("/list")
     public String listEmployees(Model theModel){
@@ -28,7 +50,7 @@ public class EmployeeController {
         // add to the spring model
         theModel.addAttribute("employees", theEmployees);
 
-        return "list-employees";
+        return "employees/list-employees";
     }
 
 }
