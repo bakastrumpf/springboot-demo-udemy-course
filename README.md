@@ -2,7 +2,7 @@
 
 Codes written alonside the Udemy course "Spring Boot 3, Spring 6 and Hibernate for Beginners," instructed by <a href="https://github.com/darbyluv2code">darbyluv2code Chad Darby</a>.
 <br>
-Basically, I try to follow the course and copy the codes as I go through the video lessons, but I also prefer renaming variables, methods, endpoints, files, and the like.
+Basically, I try to follow the course and type the codes as I go through the video lessons, but I also prefer renaming variables, methods, endpoints, files, and the like.
 
 Originally, I started the course on 
 <br>
