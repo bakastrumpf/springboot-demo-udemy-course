@@ -11,3 +11,22 @@ Originally, I started the course on
 but, due to numerous issues that emerged, I moved to a completely new setup: 
 <br>
 <strong>Linux Mint Cinnamon 21.3, IntelliJ Ultimate, Java & openJDK 19.0.2, SDK 21.0, mariaDB 10.6, dBeaver 22.3.3, and Hoppscotch</strong>.
+<br>
+<hr>
+<br>
+The main folder contains multiple individual projects. Their order of creation is the following:
+<br>
+<ul>
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/test_app">test-app, lessons ~6-20</a></li>
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/springcore">spring-core, lessons 36-47</a></li>
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/hibernate-jpa-crud">hibernate-jpa-crud, lessons ~85-89</a></li>	
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/rest-apis">rest-apis, lessons ~97-112</a></li>	
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/cruddemo">crud-demo, lessons 119-130</a></li>	
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/cruddemo-w-jpa">crud-w-jpa, lessons ~132-135</a></li>	
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/data-rest">data-rest, lessons ~135-136</a></li>	
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/security-demo">security-demo, lessons ~145-158</a></li>	
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/thymeleafdemo">thymeleafdemo, lessons ~1622-189</a></li>	
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/validationdemo">validation, lessons ~192-213</a></li>	
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/crud-demo-project">crud-demo-project, lessons ~214-227-</a></li>	
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/spring-security-demo">spring-security-demo, lessons ~230-</a></li>	
+</ul>
