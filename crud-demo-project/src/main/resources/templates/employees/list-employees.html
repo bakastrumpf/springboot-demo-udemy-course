@@ -33,14 +33,14 @@
 
             <td>
                 <!-- Add update button -->
-                <a th:href="@{/employees/showUpdateForm(employeeId=${tempEmployee.id})}"
+                <a th:href="@{/employees/update(employeeId=${tempEmployee.id})}"
                    class="btn btn-info btn-sm">
                     Update
                 </a>
                 <!-- Add delete button -->
                 <a th:href="@{/employees/delete(employeeId=${tempEmployee.id})}"
-                class="btn btn-danger btn-sm"
-                onclick="if (! (confirm('Are you sure you want to delete this employee? All data will be permanently lost.'))) return false">
+                   class="btn btn-danger btn-sm"
+                   onclick="if (! (confirm('Are you sure you want to delete this employee? All data will be permanently lost.'))) return false">
                 Delete
                 </a>
             </td>

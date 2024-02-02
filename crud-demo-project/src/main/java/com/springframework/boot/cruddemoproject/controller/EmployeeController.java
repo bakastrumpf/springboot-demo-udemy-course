@@ -29,8 +29,8 @@ public class EmployeeController {
         return "employees/employee-form";
     }
 
-    @GetMapping("/showUpdateForm")
-    public String showUpdateForm(@RequestParam("employeeId") int theId, Model theModel){
+    @GetMapping("/update")
+    public String update(@RequestParam("employeeId") int theId, Model theModel){
 
         // get employee from service
         Employee theEmployee = employeeService.findById(theId);
@@ -39,11 +39,11 @@ public class EmployeeController {
         theModel.addAttribute("employee", theEmployee);
 
         // send over to the form
-        return "redirect:/employees/list";
+        return "employees/employee-form";
     }
 
     @GetMapping("/delete")
-    public String deleteEmployee(@RequestParam("employeeId") int theId){
+    public String delete(@RequestParam("employeeId") int theId){
 
         // delete by id
         employeeService.deleteById(theId);
