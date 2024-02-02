@@ -29,6 +29,30 @@ public class EmployeeController {
         return "employees/employee-form";
     }
 
+    @GetMapping("/showUpdateForm")
+    public String showUpdateForm(@RequestParam("employeeId") int theId, Model theModel){
+
+        // get employee from service
+        Employee theEmployee = employeeService.findById(theId);
+
+        // set employee in the model to prepopulate the form
+        theModel.addAttribute("employee", theEmployee);
+
+        // send over to the form
+        return "redirect:/employees/list";
+    }
+
+    @GetMapping("/delete")
+    public String deleteEmployee(@RequestParam("employeeId") int theId){
+
+        // delete by id
+        employeeService.deleteById(theId);
+
+        // send over to the form
+        return "redirect:/employees/list";
+
+    }
+
     @PostMapping("/save")
     public String saveEmployee(@ModelAttribute("employee") Employee theEmployee){
 
