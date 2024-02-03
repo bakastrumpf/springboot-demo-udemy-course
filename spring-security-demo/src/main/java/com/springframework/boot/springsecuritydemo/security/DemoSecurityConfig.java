@@ -6,7 +6,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -48,14 +47,16 @@ public class DemoSecurityConfig {
         http.authorizeHttpRequests(configurer ->
                 configurer
                         .anyRequest().authenticated()
-        )
+                )
                 .formLogin(form ->
                         form
-                                .loginPage("showLoginPage")
+                                .loginPage("showMyLoginPage")
                                 .loginProcessingUrl("/authenticateTheUser")
                                 .permitAll()
                 );
 
         return http.build();
     }
+
+
 }
