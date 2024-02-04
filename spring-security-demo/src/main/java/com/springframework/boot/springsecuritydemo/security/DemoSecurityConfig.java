@@ -1,14 +1,19 @@
 package com.springframework.boot.springsecuritydemo.security;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+// import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
+// @Configuration annotation disables the app from starting
+// https://github.com/Baeldung/spring-security-oauth/issues/118
+// replace the annotation with @EnableWebSecurity
+// @Configuration
+@EnableWebSecurity
 public class DemoSecurityConfig {
 
     @Bean
