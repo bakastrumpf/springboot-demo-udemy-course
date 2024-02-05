@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Company Homepage</title>
 </head>
 <body>
     <h2>Welcome to Company homepage</h2>
+    <hr>
+    <!-- display username and role -->
+    <p>
+        You are logged in as: <span sec:authentication="principal.username"></span>
+        <br>
+        Role(s): <span sec:authentication="principal.authorities"></span>
+    </p>
     <hr>
     <p>Welcome to the Company homepage</p>
 
