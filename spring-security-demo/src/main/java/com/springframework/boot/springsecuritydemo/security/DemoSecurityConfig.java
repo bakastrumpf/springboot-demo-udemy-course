@@ -19,7 +19,18 @@ public class DemoSecurityConfig {
     // no more hardcoded users
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource){
-        return new JdbcUserDetailsManager(dataSource);
+
+        JdbcUserDetailsManager tudm = new JdbcUserDetailsManager(dataSource);
+
+        tudm
+                .setUsersByUsernameQuery("select user_id, pw, active from members where user_id = ?");
+
+        tudm
+                .setAuthoritiesByUsernameQuery("select user_id, role from roles where user_id = ?");
+
+        // return new JdbcUserDetailsManager(dataSource);
+
+        return tudm;
     }
 
     @Bean
