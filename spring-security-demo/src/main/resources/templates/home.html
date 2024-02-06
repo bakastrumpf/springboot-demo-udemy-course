@@ -19,13 +19,16 @@
     <hr>
     <!-- add links to point to different roles' awards etc, such as /leaders -->
    <div sec:authorize="hasRole('MANAGER')">
+       <!-- restrict content based on roles/authority -->
        <p>
            <a th:href="@{/leaders}">Leadership meeting</a>
            (Managers only)
        </p>
    </div>
 
+    <!-- add links to point to different roles' awards etc, such as /systems -->
     <div sec:authorize="hasRole('ADMIN')">
+        <!-- restrict content based on roles/authority -->
         <p>
             <a th:href="@{/systems}">Admins meeting</a>
             (System Administrators only)
