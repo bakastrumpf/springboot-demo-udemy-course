@@ -18,15 +18,19 @@
     </p>
     <hr>
     <!-- add links to point to different roles' awards etc, such as /leaders -->
-    <p>
-        <a th:href="@{/leaders}">Leadership meeting</a>
-        (Managers only)
-    </p>
+   <div sec:authorize="hasRole('MANAGER')">
+       <p>
+           <a th:href="@{/leaders}">Leadership meeting</a>
+           (Managers only)
+       </p>
+   </div>
 
-    <p>
-        <a th:href="@{/systems}">Admins meeting</a>
-        (System Administrators only)
-    </p>
+    <div sec:authorize="hasRole('ADMIN')">
+        <p>
+            <a th:href="@{/systems}">Admins meeting</a>
+            (System Administrators only)
+        </p>
+    </div>
 
     <!-- add logout button -->
     <form action="#" th:action="@{logout}" method="POST">
