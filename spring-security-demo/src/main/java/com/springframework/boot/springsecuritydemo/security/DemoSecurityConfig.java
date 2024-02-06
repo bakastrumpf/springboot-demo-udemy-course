@@ -25,11 +25,13 @@ public class DemoSecurityConfig {
 
         // define query to retrieve a user by username
         tudm
-                .setUsersByUsernameQuery("select user_id, pw, active from members where user_id = ?");
+                .setUsersByUsernameQuery(
+                        "select user_id, pw, active from members where user_id = ?");
 
         // define query to retrieve an authority by username
         tudm
-                .setAuthoritiesByUsernameQuery("select user_id, role from roles where user_id = ?");
+                .setAuthoritiesByUsernameQuery(
+                        "select user_id, role from roles where user_id = ?");
 
         // return new JdbcUserDetailsManager(dataSource);
 
