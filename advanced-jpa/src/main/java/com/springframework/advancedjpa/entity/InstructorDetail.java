@@ -75,12 +75,4 @@ public class InstructorDetail {
         this.theInstructor = theInstructor;
     }
 
-    @Override
-    public String toString() {
-        return "InstructorDetail{" +
-                "id=" + id +
-                ", ytchannel='" + ytchannel + '\'' +
-                ", hobby='" + hobby + '\'' +
-                '}';
-    }
 }
