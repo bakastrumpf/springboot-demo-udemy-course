@@ -21,12 +21,21 @@ public class AdvancedJpaApplication {
 		return runner -> {
 			// System.out.println("Hello, world!");
 			// createInstructor(appDAO);
-			findInstructor(appDAO);
+			// findInstructor(appDAO);
+			deleteInstructor(appDAO);
 		};
 	}
 
+	private void deleteInstructor(AppDAO appDAO) {
+		int theId = 2;
+		System.out.println("Deleting instructor id: " + theId);
+		appDAO.deleteInstuctorById(theId);
+		System.out.println("Successfully deleted instructor id: " + theId);
+
+	}
+
 	private void findInstructor(AppDAO appDAO) {
-		int theId = 1;
+		int theId = 2;
 		System.out.println("Finding instructor id: " + theId);
 		Instructor tempInstructor = appDAO.findInstructorById(theId);
 		System.out.println("tempInstructor: " + tempInstructor);
