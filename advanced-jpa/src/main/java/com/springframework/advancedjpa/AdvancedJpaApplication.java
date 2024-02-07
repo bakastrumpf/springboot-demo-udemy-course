@@ -1,5 +1,8 @@
 package com.springframework.advancedjpa;
 
+import com.springframework.advancedjpa.dao.AppDAO;
+import com.springframework.advancedjpa.entity.Instructor;
+import com.springframework.advancedjpa.entity.InstructorDetail;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,10 +17,34 @@ public class AdvancedJpaApplication {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(String[] args) {
+	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 		return runner -> {
-			System.out.println("Hello, world!");
+			// System.out.println("Hello, world!");
+			createInstructor(appDAO);
 		};
+	}
+
+	private void createInstructor(AppDAO appDAO) {
+
+		// create the instructor
+
+		Instructor tempInstructor =
+				new Instructor("Cindy", "Walsh", "cindy@bh90210.com");
+
+		// create instructor detail
+		InstructorDetail tempInstructorDetail =
+				new InstructorDetail("http://www.youtube.com/beverlyhills90210","gardening");
+
+		// associate the objects
+		tempInstructor.setInstructorDetail(tempInstructorDetail);
+
+		// save instructor
+		// this will also save the details obect
+		// because of CascadeType.ALL
+		System.out.println("Saving instructor: " + tempInstructor);
+
+		appDAO.save(tempInstructor);
+
 	}
 
 }
