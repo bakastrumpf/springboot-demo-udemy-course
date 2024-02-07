@@ -2,6 +2,7 @@ package com.springframework.advancedjpa.entity;
 
 import jakarta.persistence.*;
 
+@Entity
 @Table(name="instructor")
 public class Instructor {
 
