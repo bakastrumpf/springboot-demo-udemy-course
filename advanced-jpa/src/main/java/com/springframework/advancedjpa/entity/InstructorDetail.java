@@ -29,7 +29,11 @@ public class InstructorDetail {
     @Column(name = "hobby")
     private String hobby;
 
-    @OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL)
+    // when we delete one, we delete all
+    // @OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL)
+    // to only delete instructor details, but not the instructor too
+    // choose all cascade types other than ALL
+    @OneToOne(mappedBy = "instructorDetail", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private Instructor theInstructor;
 
     public InstructorDetail() {}

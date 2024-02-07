@@ -30,7 +30,7 @@ public class AdvancedJpaApplication {
 
 	private void deleteInstructorDetailById(AppDAO appDAO) {
 
-		int theId = 5;
+		int theId = 6;
 		System.out.println("Deleting instructor detail id: " + theId);
 		appDAO.deleteInstructorDetailById(theId);
 		System.out.println("Successfully deleted instructor detail id " + theId);
@@ -96,9 +96,6 @@ public class AdvancedJpaApplication {
 		InstructorDetail tempInstructorDetail =
 				new InstructorDetail("http://www.youtube.com/beverlyhills90210","finances");
 
-
-		*/
-
 		// create the instructor
 		Instructor tempInstructor =
 				new Instructor("Bill", "Taylor", "bill@bh90210.com");
@@ -106,6 +103,15 @@ public class AdvancedJpaApplication {
 		// create the instructor detail
 		InstructorDetail tempInstructorDetail =
 				new InstructorDetail("http://www.youtube.com/beverlyhills90210","unknown");
+		*/
+
+		// create the instructor
+		Instructor tempInstructor =
+				new Instructor("Rush", "Sanders", "rush@bh90210.com");
+
+		// create the instructor detail
+		InstructorDetail tempInstructorDetail =
+				new InstructorDetail("http://www.youtube.com/beverlyhills90210","baseball");
 
 
 		// associate the objects
