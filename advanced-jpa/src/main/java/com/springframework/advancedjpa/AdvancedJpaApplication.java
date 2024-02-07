@@ -1,6 +1,7 @@
 package com.springframework.advancedjpa;
 
 import com.springframework.advancedjpa.dao.AppDAO;
+import com.springframework.advancedjpa.entity.Course;
 import com.springframework.advancedjpa.entity.Instructor;
 import com.springframework.advancedjpa.entity.InstructorDetail;
 import org.springframework.boot.CommandLineRunner;
@@ -20,12 +21,52 @@ public class AdvancedJpaApplication {
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 		return runner -> {
 			// System.out.println("Hello, world!");
-			createInstructor(appDAO);
+			// createInstructor(appDAO);
 			// findInstructor(appDAO);
 			// deleteInstructor(appDAO);
 			// findInstructorDetail(appDAO);
 			// deleteInstructorDetailById(appDAO);
+			createInstructorWithCourses(appDAO);
 		};
+	}
+
+	private void createInstructorWithCourses(AppDAO appDAO) {
+
+		// create the instructor
+		Instructor tempInstructor =
+				new Instructor("Samantha", "Sanders", "samantha@bh90210.com");
+
+		// create the instructor detail
+		InstructorDetail tempInstructorDetail =
+				new InstructorDetail("http://www.youtube.com/beverlyhills90210","acting");
+
+		// associate the objects
+		tempInstructor.setInstructorDetail(tempInstructorDetail);
+
+		// create some courses
+		Course tempCourse1 = new Course("Theatre 1");
+		Course tempCourse2 = new Course("Drama 1");
+		Course tempCourse3 = new Course("TV shows 1");
+		Course tempCourse4 = new Course("Comedy 1");
+		Course tempCourse5 = new Course("Theatre 2");
+		Course tempCourse6 = new Course("Drama 2");
+
+		// add courses to the instructor
+		tempInstructor.add(tempCourse1);
+		tempInstructor.add(tempCourse2);
+		tempInstructor.add(tempCourse3);
+		tempInstructor.add(tempCourse4);
+		tempInstructor.add(tempCourse5);
+		tempInstructor.add(tempCourse6);
+
+		// save the instructor
+		// this will also save courses
+		// because of CascadeType.PERSIST
+		System.out.println("Saving instructor: " + tempInstructor);
+		System.out.println("The courses: " + tempInstructor.getCourses());
+		appDAO.save(tempInstructor);
+		System.out.println("Done! ");
+
 	}
 
 	private void deleteInstructorDetailById(AppDAO appDAO) {
