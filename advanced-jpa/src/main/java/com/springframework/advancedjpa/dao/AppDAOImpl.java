@@ -1,6 +1,7 @@
 package com.springframework.advancedjpa.dao;
 
 import com.springframework.advancedjpa.entity.Instructor;
+import com.springframework.advancedjpa.entity.InstructorDetail;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,11 @@ public class AppDAOImpl implements AppDAO {
         // delete the instructor
         entityManager.remove(tempInstructor);
 
+    }
+
+    @Override
+    public InstructorDetail findInstructorDetailById(int theId) {
+        return entityManager.find(InstructorDetail.class, theId);
     }
 
 

@@ -22,8 +22,19 @@ public class AdvancedJpaApplication {
 			// System.out.println("Hello, world!");
 			// createInstructor(appDAO);
 			// findInstructor(appDAO);
-			deleteInstructor(appDAO);
+			// deleteInstructor(appDAO);
+			findInstructorDetail(appDAO);
 		};
+	}
+
+	private void findInstructorDetail(AppDAO appDAO) {
+
+		int theId = 1;
+		System.out.println("Finding instructor detail id: " + theId);
+		InstructorDetail tempInstructorDetail = appDAO.findInstructorDetailById(theId);
+		System.out.println("tempInstructorDetail: " + tempInstructorDetail);
+		System.out.println("associated instructor: " + tempInstructorDetail.getTheInstructor());
+
 	}
 
 	private void deleteInstructor(AppDAO appDAO) {
