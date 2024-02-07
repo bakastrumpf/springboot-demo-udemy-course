@@ -26,14 +26,24 @@ public class AdvancedJpaApplication {
 
 	private void createInstructor(AppDAO appDAO) {
 
+		/*
 		// create the instructor
-
 		Instructor tempInstructor =
 				new Instructor("Cindy", "Walsh", "cindy@bh90210.com");
 
-		// create instructor detail
+		// create the instructor detail
 		InstructorDetail tempInstructorDetail =
 				new InstructorDetail("http://www.youtube.com/beverlyhills90210","gardening");
+		 */
+
+		// create the instructor
+		Instructor tempInstructor =
+				new Instructor("Felice", "Martin", "felice@bh90210.com");
+
+		// create the instructor detail
+		InstructorDetail tempInstructorDetail =
+				new InstructorDetail("http://www.youtube.com/beverlyhills90210","shopping");
+
 
 		// associate the objects
 		tempInstructor.setInstructorDetail(tempInstructorDetail);
