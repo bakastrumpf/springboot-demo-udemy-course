@@ -23,16 +23,31 @@ public class AdvancedJpaApplication {
 			// createInstructor(appDAO);
 			// findInstructor(appDAO);
 			// deleteInstructor(appDAO);
-			findInstructorDetail(appDAO);
+			// findInstructorDetail(appDAO);
+			deleteInstructorDetailById(appDAO);
 		};
+	}
+
+	private void deleteInstructorDetailById(AppDAO appDAO) {
+
+		int theId = 5;
+		System.out.println("Deleting instructor detail id: " + theId);
+		appDAO.deleteInstructorDetailById(theId);
+		System.out.println("Successfully deleted instructor detail id " + theId);
+
 	}
 
 	private void findInstructorDetail(AppDAO appDAO) {
 
+		// get the instructor detail object
 		int theId = 1;
 		System.out.println("Finding instructor detail id: " + theId);
 		InstructorDetail tempInstructorDetail = appDAO.findInstructorDetailById(theId);
+
+		// print the instructor detail
 		System.out.println("tempInstructorDetail: " + tempInstructorDetail);
+		
+		// print the associated instructor
 		System.out.println("associated instructor: " + tempInstructorDetail.getTheInstructor());
 
 	}
@@ -63,7 +78,7 @@ public class AdvancedJpaApplication {
 		// create the instructor detail
 		InstructorDetail tempInstructorDetail =
 				new InstructorDetail("http://www.youtube.com/beverlyhills90210","gardening");
-		 */
+
 
 		// create the instructor
 		Instructor tempInstructor =
@@ -72,6 +87,25 @@ public class AdvancedJpaApplication {
 		// create the instructor detail
 		InstructorDetail tempInstructorDetail =
 				new InstructorDetail("http://www.youtube.com/beverlyhills90210","shopping");
+
+		// create the instructor
+		Instructor tempInstructor =
+				new Instructor("Jack", "McKay", "jack@bh90210.com");
+
+		// create the instructor detail
+		InstructorDetail tempInstructorDetail =
+				new InstructorDetail("http://www.youtube.com/beverlyhills90210","finances");
+
+
+		*/
+
+		// create the instructor
+		Instructor tempInstructor =
+				new Instructor("Bill", "Taylor", "bill@bh90210.com");
+
+		// create the instructor detail
+		InstructorDetail tempInstructorDetail =
+				new InstructorDetail("http://www.youtube.com/beverlyhills90210","unknown");
 
 
 		// associate the objects
