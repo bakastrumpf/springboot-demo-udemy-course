@@ -42,6 +42,7 @@ public class Instructor {
     private InstructorDetail instructorDetail;
 
     @OneToMany(mappedBy = "instructor",
+            fetch = FetchType.EAGER,
             // do NOT cascade delete
             cascade = {CascadeType.PERSIST,
                     CascadeType.MERGE,
