@@ -19,8 +19,8 @@ public class AdvancedJpaApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 		return runner -> {
-			System.out.println("Hello, world!");
-			// createInstructor(appDAO);
+			// System.out.println("Hello, world!");
+			createInstructor(appDAO);
 			// findInstructor(appDAO);
 			// deleteInstructor(appDAO);
 			// findInstructorDetail(appDAO);
@@ -70,7 +70,7 @@ public class AdvancedJpaApplication {
 
 	private void createInstructor(AppDAO appDAO) {
 
-
+		/*
 		// create the instructor
 		Instructor tempInstructor =
 				new Instructor("Cindy", "Walsh", "cindy@bh90210.com");
@@ -78,7 +78,6 @@ public class AdvancedJpaApplication {
 		// create the instructor detail
 		InstructorDetail tempInstructorDetail =
 				new InstructorDetail("http://www.youtube.com/beverlyhills90210","gardening");
-/*
 
 		// create the instructor
 		Instructor tempInstructor =
@@ -103,8 +102,7 @@ public class AdvancedJpaApplication {
 		// create the instructor detail
 		InstructorDetail tempInstructorDetail =
 				new InstructorDetail("http://www.youtube.com/beverlyhills90210","unknown");
-
-
+*/
 		// create the instructor
 		Instructor tempInstructor =
 				new Instructor("Rush", "Sanders", "rush@bh90210.com");
@@ -113,7 +111,6 @@ public class AdvancedJpaApplication {
 		InstructorDetail tempInstructorDetail =
 				new InstructorDetail("http://www.youtube.com/beverlyhills90210","baseball");
 
-*/
 		// associate the objects
 		tempInstructor.setInstructorDetail(tempInstructorDetail);
 
