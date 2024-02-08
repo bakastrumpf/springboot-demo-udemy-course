@@ -36,7 +36,7 @@ public class AdvancedJpaApplication {
 
 	private void findCoursesForInstructor(AppDAO appDAO) {
 
-		int theId = 1;
+		int theId = 6;
 
 		// find the instructor
 		Instructor tempInstructor = appDAO.findInstructorById(theId);
@@ -49,6 +49,7 @@ public class AdvancedJpaApplication {
 		tempInstructor.setCourses(courses);
 
 		System.out.println("the associated courses: " + tempInstructor.getCourses());
+		System.out.println("Done! ");
 
 	}
 
