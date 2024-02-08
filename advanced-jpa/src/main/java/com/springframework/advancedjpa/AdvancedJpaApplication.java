@@ -32,8 +32,26 @@ public class AdvancedJpaApplication {
 			// findInstructorWithCourses(appDAO);
 			// findCoursesForInstructor(appDAO);
 			// findInstructorWithCoursesJoinFetcg(appDAO);
-			updateInstructor(appDAO);
+			// updateInstructor(appDAO);
+			updateCourse(appDAO);
 		};
+	}
+
+	private void updateCourse(AppDAO appDAO) {
+
+		int theId = 15;
+
+		// find the instructor
+		System.out.println("Finding course id: " + theId);
+		Course tempCourse = appDAO.findCourseById(theId);
+
+		// update data for the course
+		System.out.println("Updating course id: " + theId);
+		tempCourse.setTitle("Comedy 2");
+		appDAO.updateCourse(tempCourse);
+		System.out.println("Successfully updated the course id " + theId + " to the title " + tempCourse.getTitle());
+		System.out.println("Done");
+
 	}
 
 	private void updateInstructor(AppDAO appDAO) {
