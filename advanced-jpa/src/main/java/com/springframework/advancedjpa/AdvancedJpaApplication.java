@@ -30,8 +30,23 @@ public class AdvancedJpaApplication {
 			// deleteInstructorDetailById(appDAO);
 			// createInstructorWithCourses(appDAO);
 			// findInstructorWithCourses(appDAO);
-			findCoursesForInstructor(appDAO);
+			// findCoursesForInstructor(appDAO);
+			findInstructorWithCoursesJoinFetcg(appDAO);
 		};
+	}
+
+	private void findInstructorWithCoursesJoinFetcg(AppDAO appDAO) {
+
+		int theId = 6;
+
+		// find the instructor
+		System.out.println("Finding instructor id: " + theId);
+		Instructor tempInstructor = appDAO.findInstructorByIdJoinFetch(theId);
+
+		System.out.println("temp instructor: " + tempInstructor);
+		System.out.println("associated courses: " + tempInstructor.getCourses());
+
+		System.out.println("Done! ");
 	}
 
 	private void findCoursesForInstructor(AppDAO appDAO) {
