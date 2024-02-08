@@ -31,8 +31,26 @@ public class AdvancedJpaApplication {
 			// createInstructorWithCourses(appDAO);
 			// findInstructorWithCourses(appDAO);
 			// findCoursesForInstructor(appDAO);
-			findInstructorWithCoursesJoinFetcg(appDAO);
+			// findInstructorWithCoursesJoinFetcg(appDAO);
+			updateInstructor(appDAO);
 		};
+	}
+
+	private void updateInstructor(AppDAO appDAO) {
+
+		int theId = 6;
+
+		// find the instructor
+		System.out.println("Finding instructor id: " + theId);
+		Instructor tempInstructor = appDAO.findInstructorById(theId);
+
+		// update data for the instructor
+		System.out.println("Updating instructor id: " + theId);
+		tempInstructor.setLastName("Peters");
+		appDAO.update(tempInstructor);
+		System.out.println("Successfully updated the instructor id " + theId + " to the last name " + tempInstructor.getLastName());
+		System.out.println("Done");
+
 	}
 
 	private void findInstructorWithCoursesJoinFetcg(AppDAO appDAO) {
