@@ -37,8 +37,19 @@ public class AdvancedJpaApplication {
 			// updateCourse(appDAO);
 			// deleteCourse(appDAO);
 			// createCourseAndReviews(appDAO);
-			retrieveCourseAndreviews(appDAO);
+			// retrieveCourseAndreviews(appDAO);
+			deleteCourseAndReviews(appDAO);
 		};
+	}
+
+	private void deleteCourseAndReviews(AppDAO appDAO) {
+
+		int theId = 10;
+		System.out.println("Deleting course id: " + theId + " with its reviews...");
+		// this will delete the course AND the reviews because of CascadeType.ALL
+		appDAO.deleteCourseById(theId);
+		System.out.println("Done! ");
+
 	}
 
 	private void retrieveCourseAndreviews(AppDAO appDAO) {
