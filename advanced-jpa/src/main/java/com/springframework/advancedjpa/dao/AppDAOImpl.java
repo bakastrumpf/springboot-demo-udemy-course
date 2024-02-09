@@ -25,8 +25,6 @@ public class AppDAOImpl implements AppDAO {
         this.entityManager = entityManager;
     }
 
-
-
     @Override
     @Transactional
     public void save(Instructor theInstructor) {
@@ -160,7 +158,7 @@ public class AppDAOImpl implements AppDAO {
     @Override
     @Transactional
     public void saveCourse(Course theCourse) {
-        entityManager.persist(theCourse);
+        entityManager.merge(theCourse);
     }
 
     @Override
