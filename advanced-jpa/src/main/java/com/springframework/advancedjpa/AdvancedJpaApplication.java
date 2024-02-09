@@ -34,7 +34,7 @@ public class AdvancedJpaApplication {
 			// findInstructorWithCoursesJoinFetcg(appDAO);
 			// updateInstructor(appDAO);
 			// updateCourse(appDAO);
-			deleteCourse(appDAO);
+			// deleteCourse(appDAO);
 		};
 	}
 
