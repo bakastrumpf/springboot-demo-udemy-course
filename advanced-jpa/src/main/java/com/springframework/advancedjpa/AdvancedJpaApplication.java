@@ -1,10 +1,7 @@
 package com.springframework.advancedjpa;
 
 import com.springframework.advancedjpa.dao.AppDAO;
-import com.springframework.advancedjpa.entity.Course;
-import com.springframework.advancedjpa.entity.Instructor;
-import com.springframework.advancedjpa.entity.InstructorDetail;
-import com.springframework.advancedjpa.entity.Review;
+import com.springframework.advancedjpa.entity.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -39,7 +36,48 @@ public class AdvancedJpaApplication {
 			// createCourseAndReviews(appDAO);
 			// retrieveCourseAndreviews(appDAO);
 			// deleteCourseAndReviews(appDAO);
+			createCourseAndStudents(appDAO);
 		};
+	}
+
+	private void createCourseAndStudents(AppDAO appDAO) {
+
+		// create a course
+		Course tempCourse111 = new Course("Course 111");
+		Course tempCourse211 = new Course("Course 211");
+		Course tempCourse311 = new Course("Course 311");
+		Course tempCourse411 = new Course("Course 411");
+
+		// create the students
+		Student theStudent111 = new Student("Andrea", "Zuckerman", "andrea@bh90210.com");
+		Student theStudent211 = new Student("Steve", "Sanders", "steve@bh90210.com");
+		Student theStudent311 = new Student("Kelly", "Taylor", "kelly@bh90210.com");
+
+		// add students to the course
+		tempCourse111.addStudent(theStudent111);
+		tempCourse211.addStudent(theStudent111);
+		tempCourse211.addStudent(theStudent211);
+		tempCourse311.addStudent(theStudent211);
+		tempCourse311.addStudent(theStudent311);
+
+		// save the course and associated students
+		System.out.println("Saving the course id: " + tempCourse111);
+		System.out.println("Adding students: " + tempCourse111.getStudents() + "to the course " + tempCourse111);
+
+		System.out.println("Saving the course id: " + tempCourse211);
+		System.out.println("Adding students: " + tempCourse211.getStudents() + "to the course " + tempCourse211);
+
+		System.out.println("Saving the course id: " + tempCourse311);
+		System.out.println("Adding students: " + tempCourse311.getStudents() + "to the course " + tempCourse311);
+
+		System.out.println("Saving the course id: " + tempCourse411);
+		System.out.println("Adding students: " + tempCourse411.getStudents() + "to the course " + tempCourse411);
+
+		appDAO.saveCourse(tempCourse111);
+		appDAO.saveCourse(tempCourse211);
+		appDAO.saveCourse(tempCourse311);
+		appDAO.saveCourse(tempCourse411);
+
 	}
 
 	private void deleteCourseAndReviews(AppDAO appDAO) {
@@ -52,7 +90,7 @@ public class AdvancedJpaApplication {
 
 	}
 
-	private void retrieveCourseAndreviews(AppDAO appDAO) {
+	private void retrieveCourseAndReviews(AppDAO appDAO) {
 
 		// get the course and reviews
 		int theId = 10;
