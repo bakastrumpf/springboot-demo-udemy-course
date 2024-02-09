@@ -1,9 +1,6 @@
 package com.springframework.advancedjpa.dao;
 
-import com.springframework.advancedjpa.entity.Course;
-import com.springframework.advancedjpa.entity.Instructor;
-import com.springframework.advancedjpa.entity.InstructorDetail;
-import com.springframework.advancedjpa.entity.Review;
+import com.springframework.advancedjpa.entity.*;
 
 import java.util.List;
 
@@ -23,4 +20,5 @@ public interface AppDAO {
     void saveCourse(Course theCourse);
     Course findCourseAndReviewsByCourseId(int theId);
     Course findCourseAndStudentsByCourseId(int theId);
+    Student findStudentAndCoursesByStudentId(int theId);
 }

@@ -37,8 +37,25 @@ public class AdvancedJpaApplication {
 			// retrieveCourseAndReviews(appDAO);
 			// deleteCourseAndReviews(appDAO);
 			// createCourseAndStudents(appDAO);
-			findCourseAndStudents(appDAO);
+			// findCourseAndStudents(appDAO);
+			findStudentAndCourses(appDAO);
+			
 		};
+	}
+
+	private void findStudentAndCourses(AppDAO appDAO) {
+
+		// get the student and courses
+		int theId = 8;
+		Student tempStudent = appDAO.findStudentAndCoursesByStudentId(theId);
+
+		// print the course
+		System.out.println(tempStudent);
+
+		// print the students
+		System.out.println(tempStudent.getCourses());
+		System.out.println("Done! ");
+
 	}
 
 	private void findCourseAndStudents(AppDAO appDAO) {
