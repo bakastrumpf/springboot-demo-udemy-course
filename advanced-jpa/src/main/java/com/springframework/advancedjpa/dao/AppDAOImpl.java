@@ -156,5 +156,12 @@ public class AppDAOImpl implements AppDAO {
 
     }
 
+    // will save course and associated reviews thanks to CascadeType.ALL
+    @Override
+    @Transactional
+    public void saveCourse(Course theCourse) {
+        entityManager.persist(theCourse);
+    }
+
 
 }

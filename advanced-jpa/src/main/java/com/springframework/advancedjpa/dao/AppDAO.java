@@ -19,5 +19,6 @@ public interface AppDAO {
     void updateCourse(Course tempCourse);
     Course findCourseById(int theId);
     void deleteCourseById(int theId);
+    void saveCourse(Course theCourse);
 
 }

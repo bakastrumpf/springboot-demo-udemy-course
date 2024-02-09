@@ -4,6 +4,7 @@ import com.springframework.advancedjpa.dao.AppDAO;
 import com.springframework.advancedjpa.entity.Course;
 import com.springframework.advancedjpa.entity.Instructor;
 import com.springframework.advancedjpa.entity.InstructorDetail;
+import com.springframework.advancedjpa.entity.Review;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -35,7 +36,28 @@ public class AdvancedJpaApplication {
 			// updateInstructor(appDAO);
 			// updateCourse(appDAO);
 			// deleteCourse(appDAO);
+			createCourseAndReviews(appDAO);
 		};
+	}
+
+	private void createCourseAndReviews(AppDAO appDAO) {
+
+		// create course
+		Course tempCourse = new Course("Comedy 3");
+
+		// add reviews
+		tempCourse.addReview(new Review("Great course! 5/5"));
+		tempCourse.addReview(new Review("Not so useful, 3/5!"));
+		tempCourse.addReview(new Review("Could be better here and there, 4/5"));
+		tempCourse.addReview(new Review("To be skipped, 0/5"));
+
+		// save the course
+		System.out.println("Saving the course " + tempCourse);
+		System.out.println(tempCourse);
+		System.out.println("Available reviews: " + tempCourse.getReviews());
+		appDAO.saveCourse(tempCourse);
+		System.out.println("Done! ");
+
 	}
 
 	private void deleteCourse(AppDAO appDAO) {
