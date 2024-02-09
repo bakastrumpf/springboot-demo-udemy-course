@@ -34,37 +34,52 @@ public class AdvancedJpaApplication {
 			// updateCourse(appDAO);
 			// deleteCourse(appDAO);
 			// createCourseAndReviews(appDAO);
-			// retrieveCourseAndreviews(appDAO);
+			// retrieveCourseAndReviews(appDAO);
 			// deleteCourseAndReviews(appDAO);
-			createCourseAndStudents(appDAO);
+			// createCourseAndStudents(appDAO);
+			findCourseAndStudents(appDAO);
 		};
+	}
+
+	private void findCourseAndStudents(AppDAO appDAO) {
+
+		// get the course and students
+		int theId = 30;
+		Course tempCourse = appDAO.findCourseAndStudentsByCourseId(theId);
+
+		// print the course
+		System.out.println(tempCourse);
+
+		// print the students
+		System.out.println(tempCourse.getStudents());
+		System.out.println("Done! ");
 	}
 
 	private void createCourseAndStudents(AppDAO appDAO) {
 
 		// create a course
-		Course tempCourseA = new Course("Course A");
-		Course tempCourseB = new Course("Course B");
+		Course tempCourseC = new Course("Course C");
+		Course tempCourseD = new Course("Course D");
 
 		// create the students
-		Student theStudentA = new Student("Andrea", "Zuckerman", "andrea@bh90210.com");
-		Student theStudentB = new Student("Steve", "Sanders", "steve@bh90210.com");
-		Student theStudentC = new Student("Kelly", "Taylor", "kelly@bh90210.com");
+		Student theStudentD = new Student("Dylan", "McKay", "dylan@bh90210.com");
+		Student theStudentE = new Student("Brandon", "Walsh", "brandon@bh90210.com");
+		Student theStudentF = new Student("Brenda", "Walsh", "brenda@bh90210.com");
 
 		// add students to the course
-		tempCourseA.addStudent(theStudentA);
-		tempCourseB.addStudent(theStudentA);
-		tempCourseB.addStudent(theStudentB);
+		tempCourseC.addStudent(theStudentD);
+		tempCourseD.addStudent(theStudentE);
+		tempCourseD.addStudent(theStudentF);
 
 		// save the course and associated students
-		System.out.println("Saving the course id: " + tempCourseA);
-		System.out.println("Adding students: " + tempCourseA.getStudents() + " to the course " + tempCourseA);
+		System.out.println("Saving the course id: " + tempCourseC);
+		System.out.println("Adding students: " + tempCourseC.getStudents() + " to the course " + tempCourseC);
 
-		System.out.println("Saving the course id: " + tempCourseB);
-		System.out.println("Adding students: " + tempCourseB.getStudents() + " to the course " + tempCourseB);
+		System.out.println("Saving the course id: " + tempCourseD);
+		System.out.println("Adding students: " + tempCourseD.getStudents() + " to the course " + tempCourseD);
 
-		appDAO.saveCourse(tempCourseA);
-		appDAO.saveCourse(tempCourseB);
+		appDAO.saveCourse(tempCourseC);
+		appDAO.saveCourse(tempCourseD);
 
 	}
 
