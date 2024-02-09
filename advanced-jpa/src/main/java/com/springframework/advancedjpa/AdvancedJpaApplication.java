@@ -38,9 +38,34 @@ public class AdvancedJpaApplication {
 			// deleteCourseAndReviews(appDAO);
 			// createCourseAndStudents(appDAO);
 			// findCourseAndStudents(appDAO);
-			findStudentAndCourses(appDAO);
+			// findStudentAndCourses(appDAO);
+			addCoursesToStudent(appDAO);
 			
 		};
+	}
+
+	private void addCoursesToStudent(AppDAO appDAO) {
+
+		// find the student
+		int theId = 6;
+		Student theStudent = appDAO.findStudentAndCoursesByStudentId(theId);
+		System.out.println("Finding student id: " + theId);
+
+		// create more courses
+		Course theCourse1 = new Course("New course");
+		Course theCourse2 = new Course("Another course");
+
+		// add courses to the student
+		theStudent.addCourse(theCourse1);
+		theStudent.addCourse(theCourse2);
+
+		System.out.println("Updating student id: " + theId);
+		System.out.println("Successfully updated the student id " + theId + ". Added course: " + theStudent.getCourses());
+
+		appDAO.updateStudent(theStudent);
+
+		System.out.println("Done");
+
 	}
 
 	private void findStudentAndCourses(AppDAO appDAO) {
