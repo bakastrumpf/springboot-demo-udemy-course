@@ -32,16 +32,20 @@ public class AdvancedJpaApplication {
 			// findInstructorWithCoursesJoinFetch(appDAO);
 			// updateInstructor(appDAO);
 			// updateCourse(appDAO);
-			// deleteCourse(appDAO);
+			deleteCourse(appDAO);
 			// createCourseAndReviews(appDAO);
 			// retrieveCourseAndReviews(appDAO);
 			// deleteCourseAndReviews(appDAO);
 			// createCourseAndStudents(appDAO);
 			// findCourseAndStudents(appDAO);
 			// findStudentAndCourses(appDAO);
-			addCoursesToStudent(appDAO);
+			// addCoursesToStudent(appDAO);
+			// deleteCourseFromStudent(appDAO);
 			
 		};
+	}
+
+	private void deleteCourseFromStudent(AppDAO appDAO) {
 	}
 
 	private void addCoursesToStudent(AppDAO appDAO) {
@@ -172,7 +176,7 @@ public class AdvancedJpaApplication {
 
 	private void deleteCourse(AppDAO appDAO) {
 
-		int theId = 15;
+		int theId = 34;
 		System.out.println("Deleting course id: " + theId);
 		appDAO.deleteCourseById(theId);
 		System.out.println("Successfully deleted course id: " + theId);
