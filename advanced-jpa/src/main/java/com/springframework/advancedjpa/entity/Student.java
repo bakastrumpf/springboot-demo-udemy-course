@@ -2,6 +2,7 @@ package com.springframework.advancedjpa.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,7 +23,10 @@ public class Student {
     @Column(name = "email")
     private String email;
 
-    @ManyToMany
+    @ManyToMany(
+            fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH}
+    )
     @JoinTable(
             name = "course_student",
             joinColumns = @JoinColumn(name = "student_id"),
@@ -77,5 +81,13 @@ public class Student {
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
+    }
+
+    // add a convenience method to add a course
+    public void addCourse(Course theCourse){
+        if (courses == null){
+            courses = new ArrayList<>();
+        }
+        courses.add(theCourse);
     }
 }
