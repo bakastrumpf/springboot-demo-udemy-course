@@ -38,7 +38,7 @@ public class AdvancedJpaApplication {
 			// deleteCourse(appDAO);
 			// createCourseAndReviews(appDAO);
 			// retrieveCourseAndreviews(appDAO);
-			deleteCourseAndReviews(appDAO);
+			// deleteCourseAndReviews(appDAO);
 		};
 	}
 
