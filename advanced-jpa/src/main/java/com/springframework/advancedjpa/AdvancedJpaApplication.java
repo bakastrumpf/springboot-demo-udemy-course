@@ -47,7 +47,7 @@ public class AdvancedJpaApplication {
 	private void addCoursesToStudent(AppDAO appDAO) {
 
 		// find the student
-		int theId = 6;
+		int theId = 7;
 		Student theStudent = appDAO.findStudentAndCoursesByStudentId(theId);
 		System.out.println("Finding student id: " + theId);
 
