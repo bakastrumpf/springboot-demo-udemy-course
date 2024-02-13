@@ -29,6 +29,6 @@ The main folder contains multiple individual projects. Their order of creation i
 	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/crud-demo-project">crud-demo-project, lessons ~214-227-</a></li>	
 	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/spring-security-demo">spring-security-demo, lessons ~230-271</a></li>	
 	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/advanced-jpa">advanced-jpa, lessons ~272-331</a></li>
-	
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/aop-demo">aop-demo, lessons ~340-...</a></li>
 </ul>
 <hr>
