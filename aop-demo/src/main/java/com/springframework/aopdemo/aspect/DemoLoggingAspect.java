@@ -49,4 +49,9 @@ public class DemoLoggingAspect {
     public void performApiAnalytics(){
         System.out.println("\n =====>>> New API Analytics");
     }
+
+    @Before("forDaoPackage()")
+    public void logToCloudAsync(){
+        System.out.println("\n =====>>> Logging to cloud in async fashion");
+    }
 }
