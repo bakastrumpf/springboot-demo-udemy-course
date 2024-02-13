@@ -29,10 +29,12 @@ public class AopDemoApplication {
 		// call the business method
 		Account myAccount = new Account();
 		theAccountDAO.addAccount(myAccount, true);
+		theAccountDAO.doWork();
 
 		// call the membership business method
 		// theMembershipDAO.addAccount();
 		theMembershipDAO.addNewMethod();
+		theMembershipDAO.goToSleep();
 
 		// do it again
 		// System.out.println("\n Let's call it again! \n");
