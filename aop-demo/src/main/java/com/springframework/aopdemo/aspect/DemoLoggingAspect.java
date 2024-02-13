@@ -16,7 +16,7 @@ public class DemoLoggingAspect {
     // @Before("execution(public void com.springframework.aopdemo.DAO.AccountDAO.addAccount())")
     // @Before("execution(public void updateAccount())")
     // @Before("execution(public void add*())")
-    @Before("execution(* add*())")
+    @Before("execution(* add*(com.springframework.aopdemo.Account))")
     public void beforeAddAccountAdvice(){
         System.out.println("\n =====>>> Executing @Before advice on method");
     }
