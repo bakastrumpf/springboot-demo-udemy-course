@@ -11,6 +11,7 @@ import java.util.Optional;
 @Component
 public class DemoLoggingAspect {
 
+/*
     // this is where we all of our related advice for logging
     // starting with @Before advice
     // then @Pointcut
@@ -22,15 +23,14 @@ public class DemoLoggingAspect {
     @Pointcut("execution(* com.springframework.aopdemo.DAO.*.get*())")
     private void getter(){}
 
-
     // create pointcut for setter
     @Pointcut("execution(* com.springframework.aopdemo.DAO.*.set*())")
     private void setter(){}
 
-
     // combine pointcut to include package and exclude getter/setter
     @Pointcut("forDaoPackage() && !(getter() || setter())")
     private void forDaoPackageNoGetterSetter(){}
+*/
 
     // @Before("execution(public void com.springframework.aopdemo.DAO.AccountDAO.addAccount())")
     // @Before("execution(public void updateAccount())")
@@ -45,6 +45,8 @@ public class DemoLoggingAspect {
         System.out.println("\n =====>>> Executing @Before advice on method");
     }
 
+
+/*
     @Before("forDaoPackage()")
     public void performApiAnalytics(){
         System.out.println("\n =====>>> New API Analytics");
@@ -54,4 +56,6 @@ public class DemoLoggingAspect {
     public void logToCloudAsync(){
         System.out.println("\n =====>>> Logging to cloud in async fashion");
     }
+
+*/
 }
