@@ -31,6 +31,7 @@ public class AopDemoApplication {
 
 		// call the membership business method
 		theMembershipDAO.addAccount();
+		theMembershipDAO.addNewMethod();
 
 		// do it again
 		// System.out.println("\n Let's call it again! \n");
