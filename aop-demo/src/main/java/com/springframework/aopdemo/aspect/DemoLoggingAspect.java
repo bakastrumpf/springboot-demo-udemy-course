@@ -18,6 +18,20 @@ public class DemoLoggingAspect {
     @Pointcut("execution(* com.springframework.aopdemo.DAO.*.*())")
     private void forDaoPackage(){}
 
+    // create pointcut for getters
+    @Pointcut("execution(* com.springframework.aopdemo.DAO.*.get*())")
+    private void getter(){}
+
+
+    // create pointcut for setter
+    @Pointcut("execution(* com.springframework.aopdemo.DAO.*.set*())")
+    private void setter(){}
+
+
+    // combine pointcut to include package and exclude getter/setter
+    @Pointcut("forDaoPackage() && !(getter() || setter()")
+    private void forDaoPackageNoGetterSetter(){}
+
     // @Before("execution(public void com.springframework.aopdemo.DAO.AccountDAO.addAccount())")
     // @Before("execution(public void updateAccount())")
     // @Before("execution(public void add*())")
@@ -25,7 +39,8 @@ public class DemoLoggingAspect {
     // @Before("execution(* add*(com.springframework.aopdemo.Account))")
     // @Before("execution(* add*(com.springframework.aopdemo.Account, ..))")
     // @Before("execution(* com.springframework.aopdemo.DAO.*.*(..))")
-    @Before("forDaoPackage()")
+    // @Before("forDaoPackage()")
+    @Before("forDaoPackageNoGetterSetter()")
     public void beforeAddAccountAdvice(){
         System.out.println("\n =====>>> Executing @Before advice on method");
     }
