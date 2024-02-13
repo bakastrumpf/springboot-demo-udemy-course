@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ApiAnalyticsAspect {
 
-    @Before("forDaoPackageNoGetterSetter()")
+    @Before("com.springframework.aopdemo.aspect.AopExpressions.forDaoPackageNoGetterSetter()")
     public void beforeAddAccountAdvice(){
         System.out.println("\n =====>>> Executing @Before advice on method");
     }

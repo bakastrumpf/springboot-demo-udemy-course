@@ -40,7 +40,7 @@ public class DemoLoggingAspect {
     // @Before("execution(* add*(com.springframework.aopdemo.Account, ..))")
     // @Before("execution(* com.springframework.aopdemo.DAO.*.*(..))")
     // @Before("forDaoPackage()")
-    @Before("forDaoPackageNoGetterSetter()")
+    @Before("com.springframework.aopdemo.aspect.AopExpressions.forDaoPackageNoGetterSetter()")
     public void beforeAddAccountAdvice(){
         System.out.println("\n =====>>> Executing @Before advice on method");
     }
