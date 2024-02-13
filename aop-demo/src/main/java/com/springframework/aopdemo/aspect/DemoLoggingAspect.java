@@ -12,16 +12,11 @@ import java.util.Optional;
 public class DemoLoggingAspect {
 
     // this is where we all of our related advice for logging
-
     // starting with @Before advice
+    // then @Pointcut
 
     @Pointcut("execution(* com.springframework.aopdemo.DAO.*.*())")
     private void forDaoPackage(){}
-
-    @Before("forDaoPackage()")
-    public void performApiAnalytics(){
-
-    }
 
     // @Before("execution(public void com.springframework.aopdemo.DAO.AccountDAO.addAccount())")
     // @Before("execution(public void updateAccount())")
@@ -33,5 +28,10 @@ public class DemoLoggingAspect {
     @Before("forDaoPackage()")
     public void beforeAddAccountAdvice(){
         System.out.println("\n =====>>> Executing @Before advice on method");
+    }
+
+    @Before("forDaoPackage()")
+    public void performApiAnalytics(){
+        System.out.println("\n =====>>> New API Analytics");
     }
 }
