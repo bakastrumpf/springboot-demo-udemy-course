@@ -20,6 +20,11 @@ public class DemoLoggingAspect {
     // this is where we all of our related advice for logging
     // starting with @Before advice
     // then @Pointcut
+    // @JoinPoints
+    // @AfterReturning
+    // @AfterThrowing
+    // @After
+    // @Around
 
     @Pointcut("execution(* com.springframework.aopdemo.DAO.*.*())")
     private void forDaoPackage(){}
