@@ -2,6 +2,7 @@ package com.springframework.aopdemo.aspect;
 
 import com.springframework.aopdemo.Account;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -9,12 +10,28 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Aspect
 @Component
 @Order(3)
 public class DemoLoggingAspect {
+
+    // add a new advice for @AfterReturning on the findAccounts method
+
+    @AfterReturning(
+            pointcut = "execution(* com.springframework.aopdemo.DAO.AccountDAO.findAccounts(..))",
+            returning = "result")
+    public void  afterReturningFindAccountsAdvice(JoinPoint theJoinPoint, List<Account> result) {
+
+        // print out which method we are advising on
+        String method = theJoinPoint.getSignature().toShortString();
+        System.out.println("\n\n=====>>>>> Executing @AfterReturning on method: " + method);
+        // print out the results of the method call
+        System.out.println("\n\n=====>>>>> result: " + result);
+    }
+
 
 /*
     // this is where we all of our related advice for logging
