@@ -2,10 +2,7 @@ package com.springframework.aopdemo.aspect;
 
 import com.springframework.aopdemo.Account;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -18,12 +15,27 @@ import java.util.Optional;
 @Order(3)
 public class DemoLoggingAspect {
 
+    // add a new advice for @AfterThrowing
+    @AfterThrowing(
+            pointcut = "execution(* com.springframework.aopdemo.DAO.AccountDAO.findAccounts(..))",
+            throwing = "theExc")
+    public void afterThrowingFindAccountAdvice(JoinPoint theJoinPoint, Throwable theExc) {
+
+        System.out.println("Executing @AfterThrowing advice");
+
+        // log the exception
+        System.out.println("\n=====>>>>> The exception is: " + theExc);
+    }
+
     // add a new advice for @AfterReturning on the findAccounts method
 
     @AfterReturning(
             pointcut = "execution(* com.springframework.aopdemo.DAO.AccountDAO.findAccounts(..))",
             returning = "result")
     public void  afterReturningFindAccountsAdvice(JoinPoint theJoinPoint, List<Account> result) {
+
+        // be careful with @AfterReturning as it may return data that confuse you
+        // especially if it's somebody else's code
 
         // print out which method we are advising on
         String method = theJoinPoint.getSignature().toShortString();
@@ -53,9 +65,6 @@ public class DemoLoggingAspect {
             tempAccount.setName(theUppercaseName);
 
         }
-
-
-
     }
 
 /*
@@ -129,6 +138,5 @@ public class DemoLoggingAspect {
     public void logToCloudAsync(){
         System.out.println("\n =====>>> Logging to cloud in async fashion");
     }
-
 */
 }
