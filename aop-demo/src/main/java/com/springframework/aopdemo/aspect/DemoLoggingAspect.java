@@ -15,7 +15,7 @@ import java.util.Optional;
 @Order(3)
 public class DemoLoggingAspect {
 
-    // add a new advice for @AfterThrowing
+    // add new advice for @AfterThrowing
     @AfterThrowing(
             pointcut = "execution(* com.springframework.aopdemo.DAO.AccountDAO.findAccounts(..))",
             throwing = "theExc")
@@ -27,7 +27,7 @@ public class DemoLoggingAspect {
         System.out.println("\n=====>>>>> The exception is: " + theExc);
     }
 
-    // add a new advice for @AfterReturning on the findAccounts method
+    // add new advice for @AfterReturning on the findAccounts method
 
     @AfterReturning(
             pointcut = "execution(* com.springframework.aopdemo.DAO.AccountDAO.findAccounts(..))",
