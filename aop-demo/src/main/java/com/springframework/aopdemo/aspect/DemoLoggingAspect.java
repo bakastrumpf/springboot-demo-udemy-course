@@ -15,6 +15,19 @@ import java.util.Optional;
 @Order(3)
 public class DemoLoggingAspect {
 
+    // add new advice for @After
+    // does not have access to exceptions
+    // for exception handling, use @AfterThrowing advice
+    // @After should be able to run in the case of success or error, not depend on happy path or exception
+    // logging / auditing is the easiest case
+    @After("execution(* com.springframework.aopdemo.DAO.AccountDAO.findAccounts(..))")
+    public void afterFinallyFindAccountsAdvice(JoinPoint theJoinPoint) {
+
+        // print out which method we are advising on
+        String method = theJoinPoint.getSignature().toShortString();
+        System.out.println("\n=====>>>>> Executing @After (finally) advice on method: " + method);
+    }
+
     // add new advice for @AfterThrowing
     @AfterThrowing(
             pointcut = "execution(* com.springframework.aopdemo.DAO.AccountDAO.findAccounts(..))",
