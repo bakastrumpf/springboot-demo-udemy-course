@@ -35,7 +35,7 @@ public class DemoLoggingAspect {
 
         // compute duration and display it
         long duration = end - begin;
-        System.out.println("\n=====>>>>> Duration: " + duration + " milliseconds");
+        System.out.println("\n=====>>>>> Duration: " + duration / 1000.0 + " seconds");
 
         return result;
 
