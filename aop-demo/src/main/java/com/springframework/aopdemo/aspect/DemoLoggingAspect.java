@@ -21,7 +21,9 @@ public class DemoLoggingAspect {
             throwing = "theExc")
     public void afterThrowingFindAccountAdvice(JoinPoint theJoinPoint, Throwable theExc) {
 
-        System.out.println("Executing @AfterThrowing advice");
+        // print out which method we are advising on
+        String method = theJoinPoint.getSignature().toShortString();
+        System.out.println("Executing @AfterThrowing advice on method: " + method);
 
         // log the exception
         System.out.println("\n=====>>>>> The exception is: " + theExc);
