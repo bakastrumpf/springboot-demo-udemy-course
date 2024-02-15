@@ -2,6 +2,7 @@ package com.springframework.aopdemo.aspect;
 
 import com.springframework.aopdemo.Account;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
@@ -14,6 +15,31 @@ import java.util.Optional;
 @Component
 @Order(3)
 public class DemoLoggingAspect {
+
+    // add new advice for @Around
+    // most common in logging, auditioning, security
+    // pre- and post-processing data
+    // instrumentation / profiling code - how long does it take for a section of code to run?
+    // managing exceptions - swallow, handle, show exceptions
+    @Around("execution(* com.springframework.aopdemo.service.*.getFortune(..))")
+    public Object aroundGetFortune(ProceedingJoinPoint theProceedingJoinPoint) throws Throwable {
+
+        // get begin timestamp
+        long begin = System.currentTimeMillis();
+
+        // execute the method
+        Object result = theProceedingJoinPoint.proceed();
+
+        // get end timestamp
+        long end = System.currentTimeMillis();
+
+        // compute duration and display it
+        long duration = end - begin;
+        System.out.println("\n=====>>>>> Duration: " + duration + " milliseconds");
+
+        return result;
+
+    }
 
     // add new advice for @After
     // does not have access to exceptions
