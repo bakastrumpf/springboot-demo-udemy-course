@@ -1,6 +1,8 @@
 package com.springframework.boot.cruddemoproject.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
@@ -24,5 +26,19 @@ public class DemoLoggingAspect {
     // setup pointcut declarations for dao
     @Pointcut("execution(* com.springframework.boot.cruddemoproject.dao.*.*(..))")
     private void forDaoPackage() {}
+
+    @Pointcut("forControllerPackage() || forServicePackage() || forDaoPackage()")
+    private void forAppFlow() {}
+
+    // add @Before advice
+    @Before("forAppFlow()")
+    public void before(JoinPoint theJoinPoint) {
+
+        // display the method we are calling
+        String theMethod = theJoinPoint.getSignature().toShortString();
+        myLogger.info("=====>>>>> in @Before: calling method: " + theMethod);
+
+        // display the arguments to the method
+    }
 
 }
