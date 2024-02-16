@@ -26,9 +26,11 @@ The main folder contains multiple individual projects. Their order of creation i
 	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/security-demo">security-demo, lessons ~145-158</a></li>	
 	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/thymeleafdemo">thymeleafdemo, lessons ~162-189</a></li>	
 	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/validationdemo">validation, lessons ~192-213</a></li>	
-	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/crud-demo-project">crud-demo-project, lessons ~214-227-</a></li>	
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/crud-demo-project">crud-demo-project, lessons ~214-227, 391-395</a></li>	
 	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/spring-security-demo">spring-security-demo, lessons ~230-271</a></li>	
 	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/advanced-jpa">advanced-jpa, lessons ~272-331</a></li>
-	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/aop-demo">aop-demo, lessons ~340-...</a></li>
+	<li><a href="https://github.com/bakastrumpf/springboot-demo-udemy-course/tree/master/aop-demo">aop-demo, lessons ~340-390</a></li>
 </ul>
+<hr>
+THE END | Course successfully completed on on Feb 16, 2024 | <a href"https://udemy-certificate.s3.amazonaws.com/pdf/UC-01c7dc5c-87ef-4c08-bcb9-24e13840ad2b.pdf">Certificate</a>
 <hr>
