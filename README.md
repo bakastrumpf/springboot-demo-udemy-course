@@ -34,3 +34,4 @@ The main folder contains multiple individual projects. Their order of creation i
 <hr>
 THE END | Course successfully completed on Feb 16, 2024 | <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-01c7dc5c-87ef-4c08-bcb9-24e13840ad2b.pdf">Certificate</a>
 <hr>
+<hr>
