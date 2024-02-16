@@ -42,7 +42,7 @@ public class AopDemoApplication {
 		String data = theTrafficFortuneService.getFortune(tripWire);
 		// String data = theTrafficFortuneService.getFortune();
 		System.out.println("\n\nMy fortune today is: " + data);
-		System.out.println("Finished! ");
+		System.out.println("\nFinished! ");
 	}
 
 	private void demoTheAroundAdvice(TrafficFortuneService theTrafficFortuneService) {

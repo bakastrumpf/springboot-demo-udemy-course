@@ -28,7 +28,19 @@ public class DemoLoggingAspect {
         long begin = System.currentTimeMillis();
 
         // execute the method
-        Object result = theProceedingJoinPoint.proceed();
+        // Object result = theProceedingJoinPoint.proceed();
+        Object result = null;
+        try {
+            result = theProceedingJoinPoint.proceed();
+        } catch (Exception exc) {
+
+            // log the exception
+            System.out.println(exc.getMessage());
+
+            // give user a custom message
+            result = "\nThis road has been temporarily closed due to a major accident. Please, take a different route. ";
+
+        }
 
         // get end timestamp
         long end = System.currentTimeMillis();
