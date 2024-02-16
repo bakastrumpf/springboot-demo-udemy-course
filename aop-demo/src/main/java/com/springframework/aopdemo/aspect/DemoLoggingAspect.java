@@ -43,8 +43,10 @@ public class DemoLoggingAspect {
             System.out.println(exc.getMessage());
 
             // give user a custom message
-            result = "\nThis road has been temporarily closed due to a major accident. Please, take a different route. ";
+            // result = "\nThis road has been temporarily closed due to a major accident. Please, take a different route. ";
 
+            // rethrow the exception
+            throw exc;
         }
 
         // get end timestamp
