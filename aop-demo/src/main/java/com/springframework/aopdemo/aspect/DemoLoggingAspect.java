@@ -29,6 +29,11 @@ public class DemoLoggingAspect {
 
         // execute the method
         // Object result = theProceedingJoinPoint.proceed();
+
+        // with this, the main program will never know something went wrong
+        // be careful with this
+        // if such exceptions regularly occur, address the issue that's causing it
+        // rather than constantly handling the exception
         Object result = null;
         try {
             result = theProceedingJoinPoint.proceed();
